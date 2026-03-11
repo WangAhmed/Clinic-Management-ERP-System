@@ -1,6 +1,6 @@
-#1. Clinic Management ERP System
+# Clinic Management ERP System
 
-##Tech Stack: ASP.NET, C#, SQL Server
+Tech Stack: ASP.NET, C#, SQL Server
 
 Overview
 
@@ -18,6 +18,6 @@ Administrative dashboard and reporting tools
 
 Role-based access for clinic staff and administrators
 
-##Source Code
+Source Code
 
 https://www.mediafire.com/file/aqqr5l3tm1ejiwi/Eproject_%2528Providence_Clinic%2529.rar/file

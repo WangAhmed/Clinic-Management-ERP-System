@@ -1,0 +1,120 @@
+﻿@model ProvidenceClinics.Models.e_enrollments
+
+@{
+    ViewBag.Title = "Delete EnrollmentSS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">enrollments Details</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\e_enrollments\Index">Enrollments</a></li>
+                        <li class="breadcrumb-item active">enrollments Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+
+                            <h3>Are you sure you want to delete this?</h3>
+
+                            <div>
+                                <hr />
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        RegID
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.regid)
+                                    </dd>
+
+                                    <dt>
+                                        Enrollment Date
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.enrollment_date)
+                                    </dd>
+
+                                    <dt>
+                                        Fees
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.fee)
+                                    </dd>
+
+                                    <dt>
+                                        Class Name
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.e_class.name)
+                                    </dd>
+
+                                    <dt>
+                                        Lec/Sem/Prac
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.e_lsp.name)
+                                    </dd>
+
+                                    <dt>
+                                        Student
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.e_students.name)
+                                    </dd>
+
+                                    <dt>
+                                        Teacher
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.e_staff.name)
+                                    </dd>
+
+                                    <dt>
+                                        Subject
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.e_subject.name)
+                                    </dd>
+
+                                </dl>
+
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Delete" class="btn btn-success" /> |
+                                        @Html.ActionLink("Cancel", "Index")
+                                    </div>
+                                }
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

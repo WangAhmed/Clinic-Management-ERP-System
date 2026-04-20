@@ -1,0 +1,166 @@
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\ProvidenceClinics.dll.config
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\ProvidenceClinics.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\ProvidenceClinics.pdb
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\csc.exe
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\csc.exe.config
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\csc.rsp
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\csi.exe
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\csi.exe.config
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\csi.rsp
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.AppContext.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Console.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.IO.Compression.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Net.Http.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.ValueTuple.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\vbc.exe
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\vbc.exe.config
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\vbc.rsp
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\VBCSCompiler.exe
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\Antlr3.Runtime.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\EntityFramework.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\EntityFramework.SqlServer.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\Newtonsoft.Json.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.Helpers.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.Mvc.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.Optimization.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.Razor.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.WebPages.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.WebPages.Razor.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\WebGrease.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\EntityFramework.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\EntityFramework.SqlServer.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.Helpers.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.Mvc.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.Optimization.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.Razor.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.WebPages.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\System.Web.WebPages.Razor.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\Newtonsoft.Json.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\Antlr3.Runtime.pdb
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\obj\Debug\ProvidenceClinics.csproj.AssemblyReference.cache
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\obj\Debug\ProvidenceClinics.csproj.CoreCompileInputs.cache
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\obj\Debug\Providen.C1594A1B.Up2Date
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\obj\Debug\ProvidenceClinics.dll
+C:\Users\Zeeshan\Desktop\ProvidenceClinics\obj\Debug\ProvidenceClinics.pdb
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\ProvidenceClinics.dll.config
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\ProvidenceClinics.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\ProvidenceClinics.pdb
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\csc.exe
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\csc.exe.config
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\csc.rsp
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\csi.exe
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\csi.exe.config
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\csi.rsp
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.AppContext.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Console.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.IO.Compression.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Net.Http.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.ValueTuple.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\vbc.exe
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\vbc.exe.config
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\vbc.rsp
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\VBCSCompiler.exe
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\Antlr3.Runtime.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\EntityFramework.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\EntityFramework.SqlServer.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\Newtonsoft.Json.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.Helpers.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.Mvc.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.Optimization.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.Razor.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.WebPages.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.WebPages.Razor.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\WebGrease.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\EntityFramework.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\EntityFramework.SqlServer.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.Helpers.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.Mvc.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.Optimization.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.Razor.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.WebPages.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\System.Web.WebPages.Razor.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\Newtonsoft.Json.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\Antlr3.Runtime.pdb
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\obj\Debug\ProvidenceClinics.csproj.AssemblyReference.cache
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\obj\Debug\ProvidenceClinics.csproj.CoreCompileInputs.cache
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\obj\Debug\Providen.C1594A1B.Up2Date
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\obj\Debug\ProvidenceClinics.dll
+C:\Users\Zeeshan\Desktop\Eproject (Providence Clinic)\Project\ProvidenceClinics\obj\Debug\ProvidenceClinics.pdb

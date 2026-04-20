@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Appointment.Models.s_Prescription>
+
+@{
+    ViewBag.Title = "Index";
+    var appointments = ViewBag.Appointments as List<Appointment.Models.AppointmentViewModel>;
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Prescriptions</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">Prescriptions</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                @Html.Partial("_DoctorSidebar")
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="content container-fluid">
+                    <div class="page-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="page-title">Prescriptions</h3>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Doctor")">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">Prescriptions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-auto text-right float-right ml-auto">
+                            <a href="@Url.Action("Create", "s_Prescription")" class="btn btn-outline-primary mr-2"><i class="fas fa-plus"></i> Add Prescription</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card card-table">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-center mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Prescription ID</th>
+                                                    <th>Appointment ID</th>
+                                                    <th>Appointment</th>
+                                                    <th>Medicine</th>
+                                                    <th>Dosage</th>
+                                                    <th>Duration</th>
+                                                    <th>Notes</th>
+                                                    <th class="text-right">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>@item.PrescriptionID</td>
+                                                        <td>@item.AppointmentID</td>
+                                                        <td>@item.s_Appointment.AppointmentDate</td>
+                                                        <td>@item.m_medicines.name</td>
+                                                        <td>@item.Dosage</td>
+                                                        <td>@item.Duration</td>
+                                                        <td>@item.Notes</td>
+                                                        <td class="text-right">
+                                                            <a href="@Url.Action("Edit", "s_Prescription", new { id = item.PrescriptionID })" class="btn btn-sm btn-primary">Edit</a>
+                                                            <a href="@Url.Action("Delete", "s_Prescription", new { id = item.PrescriptionID })" class="btn btn-sm btn-danger">Delete</a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /Page Content -->

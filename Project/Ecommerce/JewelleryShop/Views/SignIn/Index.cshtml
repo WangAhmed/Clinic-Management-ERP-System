@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Breadcrumbs Area Start -->
+<div class="breadcrumbs-area2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Login / Create An Account</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumbs Area End -->
+<!-- Login Account Area Start -->
+<div class="login-account-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="account-details">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <form method="post" class="create-account-form" action="#">
+                        <h1 class="heading-title">Create an account</h1>
+                        <p class="form-row">
+                            <label>Email address</label>
+                            <input type="email">
+                        </p>
+                        <div class="submit">
+                            <a href="/SignUp/Index" class="btn btn-default button button-small" title="Home">
+                                <span>
+                                    <i class="fa fa-chevron-left"></i>
+                                    Create an Account
+                                </span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <form method="post" class="login-form" action="/SignIn/Auth">
+                        <h1 class="heading-title">Already registered?</h1>
+                        <h2>@TempData["Msg"]</h2>
+                        <p class="form-row">
+                            <label>Email address</label>
+                            <input type="email" name="uname">
+                        </p>
+                        <p class="form-row">
+                            <label>Password</label>
+                            <input type="password" name="pwd">
+                        </p>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="submit" value="Login" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login Account Area End -->

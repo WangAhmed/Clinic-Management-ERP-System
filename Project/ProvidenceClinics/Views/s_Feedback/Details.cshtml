@@ -1,0 +1,68 @@
+﻿@model ProvidenceClinics.Models.s_Feedback
+
+@{
+    ViewBag.Title = "FeedBack Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">FeedBack Details</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\s_Feedback\Index">FeedBack</a></li>
+                        <li class="breadcrumb-item active">FeedBack Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Doctor Name
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.s_Doctor.FirstName)
+                                </dd>
+
+                                <dt>
+                                    Patient Name
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.s_Patient.FirstName)
+                                </dd>
+                                <dt>
+                                    Comment
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Comments)
+                                </dd>
+
+                                <dt>
+                                    Rating
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Rating)
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

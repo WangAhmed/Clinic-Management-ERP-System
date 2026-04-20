@@ -1,0 +1,280 @@
+﻿@{
+    var userType = Session["UserType"] as string;
+    var userId = Session["UserID"] as int?;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+    System.Diagnostics.Debug.WriteLine($"Current UserID: {userId}");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <!-- Favicons -->
+    <link href="~/assets/img/favicon.png" rel="icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <!-- Favicons -->
+    <link href="~/~/assets/img/favicon.png" rel="icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/select2/css/select2.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="~/assets/js/html5shiv.min.js"></script>
+            <script src="~/assets/js/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+<body class="account-page">
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar navbar-expand-lg header-nav">
+                <div class="navbar-header">
+                    <a id="mobile_btn" href="javascript:void(0);">
+                        <span class="bar-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </a>
+                    <a href="\Home\Index" class="navbar-brand logo">
+                        <img src="~/assets/img/Logo.png" class="img-fluid" alt="Logo">
+                    </a>
+                </div>
+                <div class="main-menu-wrapper">
+                    <div class="menu-header">
+                        <a href="\Home\Index" class="menu-logo">
+                            <img src="~/assets/img/logo.png" class="img-fluid" alt="Logo">
+                        </a>
+                        <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+                    <ul class="main-nav">
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">Home</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Patient", new { id = Session["UserID"] })">Patient Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("LabTest", "Patient")">Lab Tests</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Edits", "Patient")">
+                              
+                                <span>Profile Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Prescriptions", "Patient")">Prescription</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Search", "Home")">Search Doctor</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <ul class="nav header-navbar-rht">
+                    <li class="nav-item m3">
+                        <a class="nav-link header-login p3" href="\Signin\SignOut">logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- /Header -->
+
+        @RenderBody()
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+
+                            <!-- Footer Widget -->
+                            <div class="footer-widget footer-about">
+                                <div class="footer-logo">
+                                    <img src="~/assets/img/footer-logo.png" width="300" height="200" alt="logo">
+                                </div>
+                                <div class="footer-about-content">
+                                    <p>Elevate your healthcare journey with our innovative Hospital Appointment Management System. Seamlessly manage appointments for a healthier and connected future in healthcare.</p>
+                                    <div class="social-icon">
+                                        <ul>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Footer Widget -->
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+
+                            <!-- Footer Widget -->
+                            <div class="footer-widget footer-menu">
+                                <h2 class="footer-title">For Patients</h2>
+                                <ul>
+                                    <li><a href="patient-dashboard.php"><i class="fas fa-angle-double-right"></i> Patient Dashboard</a></li>
+                                    <li><a href="search.php"><i class="fas fa-angle-double-right"></i> Search for Doctors</a></li>
+                                    <li><a href="booking.php"><i class="fas fa-angle-double-right"></i> Booking</a></li>
+                                </ul>
+                            </div>
+                            <!-- /Footer Widget -->
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+
+                            <!-- Footer Widget -->
+                            <div class="footer-widget footer-contact">
+                                <h2 class="footer-title">Contact Us</h2>
+                                <div class="footer-contact-info">
+                                    <div class="footer-address">
+                                        <span><i class="fas fa-map-marker-alt"></i></span>
+                                        <P>30-A, Progressive Center, Suite # 202-203, Main Shahrah-e-Faisal Rd, near Lal Kothi (house), Karachi, 75400</P>
+                                    </div>
+                                    <p>
+                                        <i class="fas fa-phone-alt"></i>
+                                        (021) 34385418
+                                    </p>
+                                    <p class="mb-0">
+                                        <i class="fas fa-envelope"></i>
+                                        info@healthcare.com
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /Footer Widget -->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /Footer Top -->
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container-fluid">
+
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="copyright-text">
+                                    <p class="mb-0"><a href="templateshub.net">Templates Hub</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+
+                                <!-- Copyright Menu -->
+                                <div class="copyright-menu">
+                                    <ul class="policy-menu">
+                                        <li><a href="term-condition.html">Terms and Conditions</a></li>
+                                        <li><a href="privacy-policy.html">Policy</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /Copyright Menu -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Copyright -->
+
+                </div>
+            </div>
+            <!-- /Footer Bottom -->
+
+        </footer>
+        <!-- /Footer -->
+
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- jQuery -->
+
+    <script src="~/assets/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+
+    <!-- Slick JS -->
+    <script src="~/assets/js/slick.js"></script>
+
+    <!-- Custom JS -->
+    <script src="~/assets/js/script.js"></script>
+
+    <script src="~/assets/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+
+    <!-- Sticky Sidebar JS -->
+    <script src="~/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+    <script src="~/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+
+    <!-- Datetimepicker JS -->
+    <script src="~/assets/js/moment.min.js"></script>
+    <script src="~/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Full Calendar JS -->
+    <script src="~/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/assets/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
+
+    <!-- Custom JS -->
+    <script src="~/assets/js/script.js"></script>
+
+</body>
+
+<!-- doccure/calendar.html  30 Nov 2019 04:12:19 GMT -->
+</html>

@@ -1,0 +1,67 @@
+﻿@model ProvidenceClinics.Models.e_staff
+
+@{
+    ViewBag.Title = "Staff Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Staff Details</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\e_staff\Index">Staff</a></li>
+                        <li class="breadcrumb-item active">Staff Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Name
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.name)
+                                </dd>
+
+                                <dt>
+                                    Image
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.image)
+                                </dd>
+
+                                <dt>
+                                    Qualification
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.qualification)
+                                </dd>
+
+                                <dt>
+                                    Staff Type
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.e_staff_type.type)
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

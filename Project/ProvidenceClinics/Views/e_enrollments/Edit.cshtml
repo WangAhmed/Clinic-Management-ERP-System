@@ -1,0 +1,111 @@
+﻿@model ProvidenceClinics.Models.e_enrollments
+
+@{
+    ViewBag.Title = "Edit Enrollment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Add enrollment</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\e_enrollments\Index">Enrollments</a></li>
+                        <li class="breadcrumb-item active">Add enrollment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.enid)
+
+                            <div class="form-group">
+                               <label class="control-label  col-12"> RegID </label>
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.regid, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.regid, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                                <div class="form-group">
+                                    <label class="control-label  col-12"> Student ID</label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("stdid", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.stdid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label  col-12"> Class ID  </label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("classid", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.classid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label  col-12"> Subject ID </label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("subid", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.subid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                   <label class="control-label  col-12"> Lecture/Seminar/Practicle </label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("lspid", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.lspid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label  col-12"> Staff ID </label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("proid", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.proid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label  col-12"> Enrollment Date [YYYY/MM/DD]</label>
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.enrollment_date, new { htmlAttributes = new { @class = "form-control DATE" } }) 
+                                        @Html.ValidationMessageFor(model => model.enrollment_date, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label  col-12"> Fees </label>
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.fee, new { htmlAttributes = new { @class = "form-control" } }) 
+                                        @Html.ValidationMessageFor(model => model.fee, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-8">
+                                        <input type="submit" value="Save" class="btn btn-success" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

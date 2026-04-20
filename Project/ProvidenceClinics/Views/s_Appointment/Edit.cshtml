@@ -1,0 +1,99 @@
+﻿@model ProvidenceClinics.Models.s_Appointment
+
+@{
+    ViewBag.Title = "Edit Appointment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Edit Appointment</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/s_Appointment/Index">Appointment</a></li>
+                        <li class="breadcrumb-item active">Edit Appointment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.AppointmentID)
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Pateint Name </label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownList("PatientID", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.PatientID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Doctor Name </label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownList("DoctorID", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.DoctorID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Appointment Date </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.AppointmentDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Appointment Time </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.AppointmentTime, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.AppointmentTime, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Fee </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.fee, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.fee, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Status </label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownList("Statusid", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Statusid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Save" class="btn btn-success" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

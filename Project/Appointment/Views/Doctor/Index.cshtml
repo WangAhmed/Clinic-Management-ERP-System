@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Doctor Dashboard";
+    var appointments = ViewBag.Appointments as List<Appointment.Models.AppointmentViewModel>;
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+
+
+                @Html.Partial("_DoctorSidebar")
+
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="card">
+                    <div class="card-body pt-0">
+                        <div class="card card-table mb-0">
+                            <div class="card-body">
+                                <div class="table-responsive">
+
+                                    @if (appointments != null && appointments.Count > 0)
+                                    {
+                                        <table class="table table-hover table-center mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Appointment ID</th>
+                                                    <th>Patient Name</th>
+                                                    <th>Doctor Name</th>
+                                                    <th>Appointment Date</th>
+                                                    <th>Appointment Time</th>
+                                                    <th>Status</th>
+                                                    <th>Fee</th>
+                                                    <th>Patient Email</th>
+                                                    <th>Doctor Email</th>
+                                                    <th>Specialist Name</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var appointment in appointments)
+                                                {
+                                                    <tr>
+                                                        <td>@appointment.AppointmentID</td>
+                                                        <td>@appointment.PatientFirstName @appointment.PatientLastName</td>
+                                                        <td>@appointment.DoctorFirstName @appointment.DoctorLastName</td>
+                                                        <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                                                        <td>@appointment.AppointmentTime.ToString(@"hh\:mm")</td>
+                                                        <td>@appointment.StatusName</td>
+                                                        <td>@appointment.Fee.ToString("C")</td>
+                                                        <td>@appointment.PatientEmail</td>
+                                                        <td>@appointment.DoctorEmail</td>
+                                                        <td>@appointment.SpecialistName</td>
+                                                        <td>
+                                                            @using (Html.BeginForm("UpdateStatus", "Doctor", FormMethod.Post, new { id = "updateStatusForm_" + appointment.AppointmentID }))
+                                                            {
+                                                                @Html.Hidden("appointmentID", appointment.AppointmentID)
+                                                                @Html.DropDownList("newStatusID", (SelectList)ViewBag.Statuses, "Select Status", new { @class = "form-control" })
+                                                                <button type="submit" class="btn btn-warning">Update Status</button>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    }
+                                    else
+                                    {
+                                        <p>No appointments available.</p>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Appointment Tab -->
+                </div>
+                <!-- Tab Content -->
+            </div>
+        </div>
+    </div>
+
+</div>

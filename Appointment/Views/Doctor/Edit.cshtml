@@ -1,0 +1,104 @@
+﻿@model Appointment.Models.s_Doctor
+
+@{
+    ViewBag.Title = "Edit Doctor";
+    var appointments = ViewBag.Appointments as List<Appointment.Models.AppointmentViewModel>;
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<h2>Edit Doctor</h2>
+
+@using (Html.BeginForm("Edit", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>s_Doctor</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DoctorID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.DoctorID)
+                @Html.HiddenFor(model => model.DoctorID)
+            </div>
+        </div>
+
+        <!-- Hidden regid field -->
+        @Html.HiddenFor(model => model.regid)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @if (Model.image != null)
+                {
+                    <img src="@Url.Content("~/data/" + Model.image)" alt="Doctor Image" style="max-width: 200px; max-height: 200px;" />
+                }
+                <input type="file" name="imageFile" />
+                @Html.ValidationMessageFor(model => model.image)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SpecialistID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SpecialistID", (SelectList)ViewBag.SpecialistID, "Select a Specialist", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SpecialistID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContactNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ContactNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

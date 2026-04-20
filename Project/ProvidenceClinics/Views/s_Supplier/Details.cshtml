@@ -1,0 +1,73 @@
+﻿@model ProvidenceClinics.Models.s_Supplier
+
+@{
+    ViewBag.Title = "Details S Supplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Details Supplier</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/s_Supplier/Index">Supplier</a></li>
+                        <li class="breadcrumb-item active">Details Supplier</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            <h4>About Me</h4>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.SupplierName)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.SupplierName)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.ContactNumber)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.ContactNumber)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Address)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Address)
+                                </dd>
+
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+
+</div>

@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Patient Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <!-- Register Content -->
+                <div class="account-content">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-4 col-lg-12">
+                            <img src="~/assets/img/login-banner.png" class="img-fluid center" alt="Doccure Register" height="500" width="500" style="margin-left: 20%">
+                        </div>
+                        <div class="col-md-12 col-lg-8">
+                            <div class="login-header text-lg-center">
+                                <h1>Patient Register</h1>
+                            </div>
+                            @if (!string.IsNullOrEmpty(ViewBag.Message))
+                            {
+                                <div class="alert alert-info">
+                                    @ViewBag.Message
+                                </div>
+                            }
+
+                            @using (Html.BeginForm("PatientRegistration", "Signup", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <div class="form-group">
+                                    @Html.Label("Username")
+                                    @Html.TextBox("Username", null, new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Email")
+                                    @Html.TextBox("Email", null, new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Password")
+                                    @Html.Password("Password", null, new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("First Name")
+                                    @Html.TextBox("FirstName", null, new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Last Name")
+                                    @Html.TextBox("LastName", null, new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Date of Birth")
+                                    @Html.TextBox("DateOfBirth", null, new { @class = "form-control", type = "date" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Gender")
+                                    @Html.DropDownList("Gender", new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Contact Number")
+                                    @Html.TextBox("ContactNumber", null, new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Address")
+                                    @Html.TextBox("Address", null, new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Country")
+                                    @Html.DropDownList("CountryID", (SelectList)ViewBag.Countries, "Select Country", new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("City")
+                                    @Html.DropDownList("CityID", (SelectList)ViewBag.Cities, "Select City", new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Image">Profile Image</label>
+                                    <input type="file" name="Image" id="Image" class="form-control" />
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            }
+
+                            <div class="text-center dont-have">Already have an have an account? <a href="\Signin\Index">Register</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Register Content -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->

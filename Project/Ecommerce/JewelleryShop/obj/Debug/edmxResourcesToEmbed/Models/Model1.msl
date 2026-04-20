@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="NorthwindEntities">
+    <EntitySetMapping Name="C__EFMigrationsHistory">
+      <EntityTypeMapping TypeName="NorthwindModel.C__EFMigrationsHistory">
+        <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoleClaims">
+      <EntityTypeMapping TypeName="NorthwindModel.AspNetRoleClaim">
+        <MappingFragment StoreEntitySet="AspNetRoleClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="NorthwindModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+          <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="NorthwindModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="NorthwindModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="NorthwindModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
+          <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+          <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
+          <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers2">
+      <EntityTypeMapping TypeName="NorthwindModel.AspNetUsers2">
+        <MappingFragment StoreEntitySet="AspNetUsers2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
+          <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserTokens">
+      <EntityTypeMapping TypeName="NorthwindModel.AspNetUserToken">
+        <MappingFragment StoreEntitySet="AspNetUserTokens">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CartLines">
+      <EntityTypeMapping TypeName="NorthwindModel.CartLine">
+        <MappingFragment StoreEntitySet="CartLine">
+          <ScalarProperty Name="CartLineID" ColumnName="CartLineID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CITies">
+      <EntityTypeMapping TypeName="NorthwindModel.CITY">
+        <MappingFragment StoreEntitySet="CITY">
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+          <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUNTRies">
+      <EntityTypeMapping TypeName="NorthwindModel.COUNTRY">
+        <MappingFragment StoreEntitySet="COUNTRY">
+          <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+          <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTOMERs">
+      <EntityTypeMapping TypeName="NorthwindModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="PIN_CODE" ColumnName="PIN_CODE" />
+          <ScalarProperty Name="KEYWORD" ColumnName="KEYWORD" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerDemographics">
+      <EntityTypeMapping TypeName="NorthwindModel.CustomerDemographic">
+        <MappingFragment StoreEntitySet="CustomerDemographics">
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+          <ScalarProperty Name="CustomerDesc" ColumnName="CustomerDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers1">
+      <EntityTypeMapping TypeName="NorthwindModel.Customer1">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="NorthwindModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TitleOfCourtesy" ColumnName="TitleOfCourtesy" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ReportsTo" ColumnName="ReportsTo" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGINs">
+      <EntityTypeMapping TypeName="NorthwindModel.LOGIN">
+        <MappingFragment StoreEntitySet="LOGIN">
+          <ScalarProperty Name="LOGIN_ID" ColumnName="LOGIN_ID" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="MEM_TYPE" ColumnName="MEM_TYPE" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Details">
+      <EntityTypeMapping TypeName="NorthwindModel.Order_Detail">
+        <MappingFragment StoreEntitySet="Order Details">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="NorthwindModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Line1" ColumnName="Line1" />
+          <ScalarProperty Name="Line2" ColumnName="Line2" />
+          <ScalarProperty Name="Line3" ColumnName="Line3" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="GiftWrap" ColumnName="GiftWrap" />
+          <ScalarProperty Name="Shipped" ColumnName="Shipped" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders2">
+      <EntityTypeMapping TypeName="NorthwindModel.Orders2">
+        <MappingFragment StoreEntitySet="Orders2">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+          <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+          <ScalarProperty Name="Freight" ColumnName="Freight" />
+          <ScalarProperty Name="ShipName" ColumnName="ShipName" />
+          <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
+          <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+          <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
+          <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
+          <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productsbkps">
+      <EntityTypeMapping TypeName="NorthwindModel.Productsbkp">
+        <MappingFragment StoreEntitySet="Productsbkp">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
+          <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
+          <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+          <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="LOC_ID" ColumnName="LOC_ID" />
+          <ScalarProperty Name="SH_ID" ColumnName="SH_ID" />
+          <ScalarProperty Name="ROW_NO" ColumnName="ROW_NO" />
+          <ScalarProperty Name="COL_NO" ColumnName="COL_NO" />
+          <ScalarProperty Name="dbimage" ColumnName="dbimage" />
+          <ScalarProperty Name="ImageMimeType" ColumnName="ImageMimeType" />
+          <ScalarProperty Name="tr_type" ColumnName="tr_type" />
+          <ScalarProperty Name="tr_date" ColumnName="tr_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="NorthwindModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="RegionDescription" ColumnName="RegionDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SCartLines">
+      <EntityTypeMapping TypeName="NorthwindModel.SCartLine">
+        <MappingFragment StoreEntitySet="SCartLine">
+          <ScalarProperty Name="CartLineID" ColumnName="CartLineID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shippers">
+      <EntityTypeMapping TypeName="NorthwindModel.Shipper">
+        <MappingFragment StoreEntitySet="Shippers">
+          <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOrders">
+      <EntityTypeMapping TypeName="NorthwindModel.SOrder">
+        <MappingFragment StoreEntitySet="SOrders">
+          <ScalarProperty Name="SOrderID" ColumnName="SOrderID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Line1" ColumnName="Line1" />
+          <ScalarProperty Name="Line2" ColumnName="Line2" />
+          <ScalarProperty Name="Line3" ColumnName="Line3" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="GiftWrap" ColumnName="GiftWrap" />
+          <ScalarProperty Name="Shipped" ColumnName="Shipped" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="NorthwindModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Territories">
+      <EntityTypeMapping TypeName="NorthwindModel.Territory">
+        <MappingFragment StoreEntitySet="Territories">
+          <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+          <ScalarProperty Name="TerritoryDescription" ColumnName="TerritoryDescription" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="NorthwindModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CustomerCustomerDemo" TypeName="NorthwindModel.CustomerCustomerDemo" StoreEntitySet="CustomerCustomerDemo">
+      <EndProperty Name="CustomerDemographics">
+        <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+      </EndProperty>
+      <EndProperty Name="Customers">
+        <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployeeTerritories" TypeName="NorthwindModel.EmployeeTerritories" StoreEntitySet="EmployeeTerritories">
+      <EndProperty Name="Employees">
+        <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+      </EndProperty>
+      <EndProperty Name="Territories">
+        <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="REGISTRATION" FunctionName="NorthwindModel.Store.REGISTRATION" />
+  </EntityContainerMapping>
+</Mapping>

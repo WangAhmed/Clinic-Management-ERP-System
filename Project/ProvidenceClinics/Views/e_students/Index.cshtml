@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.e_students>
+
+@{
+    ViewBag.Title = "Index Student";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Student</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Education</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                    <a href="\e_students\Create" class="btn btn-primary"> Add New Student
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Father Name
+                                        </th>
+                                        <th>
+                                            Image
+                                        </th>
+                                        <th>
+                                            Age
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.f_name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.image)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.age)
+                                            </td>
+                                            <td>
+                                                <button>@Html.ActionLink("Edit", "Edit", new { id = item.stdid }) </button> |
+                                                <button>@Html.ActionLink("Details", "Details", new { id = item.stdid }) </button> |
+                                                <button> @Html.ActionLink("Delete", "Delete", new { id = item.stdid }) </button>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.s_AppointmentDetail>
+
+@{
+    ViewBag.Title = "Index AppointmentDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">AppointmentDetail</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Appointment</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                   
+                    <a href="/s_AppointmentDetail/Create" class="btn btn-primary">Add AppointmentDetail <i class="fas fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Appointment ID
+                                        </th>
+                                        <th>
+                                            Appointment Details
+                                        </th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.s_Appointment.AppointmentID)
+                                            </td> 
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Detail)
+                                            </td>
+                                            <td>
+                                                <button> @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentDetailID }) </button> |
+                                                <button> @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentDetailID }) </button>                                               
+                                            </td>
+                                        </tr>
+                                    }
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+</div>

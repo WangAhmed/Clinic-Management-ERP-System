@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Appointment.Models.s_Doctor>
+
+@{
+    ViewBag.Title = "Search";
+
+    // Debugging: Log or output the current user type
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Search Filter -->
+            <div class="card search-filter">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">Search Filter</h4>
+                </div>
+
+                <div class="card-body">
+                    <form action="/Home/Search" method="get">
+                        <div class="filter-widget">
+                            <div>
+                                <input name="DoctorName" type="text" class="form-control" placeholder="Search">
+                            </div>
+                        </div>
+                        <div class="filter-widget">
+                            <div class="btn-search">
+                                <button type="submit" class="btn btn-block">Search</button>
+                            </div>
+                        </div>
+                        <div class="filter-widget">
+                            <div>
+                                <input name="SpecialistID" type="text" class="form-control" placeholder="Search by Specialty">
+                            </div>
+                        </div>
+                        <div class="filter-widget">
+                            <div class="btn-search">
+                                <button type="submit" class="btn btn-block">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /Search Filter -->
+
+            <h2>Search Results</h2>
+            <div class="doctor-list">
+                @foreach (var item in Model)
+                {
+                    <!-- Doctor Widget -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="doctor-widget">
+                                <div class="doc-info-left">
+                                    <div class="doctor-img">
+                                        <a href="@Url.Action("Detail", "Home", new { id = item.DoctorID })">
+                                            <img src="~/@(!string.IsNullOrEmpty(item.image) ? Url.Content(item.image) : Url.Content("~/images/default-doctor.png"))" class="img-fluid" alt="Doctor Image">
+                                        </a>
+                                    </div>
+                                    <div class="doc-info-cont">
+                                        <h4 class="doc-name">
+                                            <a href="@Url.Action("Detail", "Home", new { id = item.DoctorID })">
+                                                @item.FirstName @item.LastName
+                                            </a>
+                                        </h4>
+                                        <p class="doc-speciality">@item.SpecialistID</p>
+                                        <div class="rating">
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star filled"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="d-inline-block average-rating">(17)</span>
+                                        </div>
+                                        <div class="clinic-details">
+                                            <ul class="clinic-gallery">
+                                                <li>
+                                                    <a href="~/assets/img/features/feature-01.jpg" data-fancybox="gallery">
+                                                        <img src="~/assets/img/features/feature-01.jpg" alt="Feature">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/assets/img/features/feature-02.jpg" data-fancybox="gallery">
+                                                        <img src="~/assets/img/features/feature-02.jpg" alt="Feature">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/assets/img/features/feature-03.jpg" data-fancybox="gallery">
+                                                        <img src="~/assets/img/features/feature-03.jpg" alt="Feature">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/assets/img/features/feature-04.jpg" data-fancybox="gallery">
+                                                        <img src="~/assets/img/features/feature-04.jpg" alt="Feature">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doc-info-right">
+                                    <div class="clini-infos">
+                                        <ul>
+                                            <li><i class="far fa-thumbs-up"></i> 98%</li>
+                                            <li><i class="far fa-money-bill-alt"></i> Rs 500 <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clinic-booking">
+                                        <a class="view-pro-btn" href="@Url.Action("Detail", "Home", new { id = item.DoctorID })">View Profile</a>
+                                        @if (Session["UserID"] == null)
+                                        {
+                                            <a class="apt-btn" href="@Url.Action("Index", "Signin")">Book Appointment</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="apt-btn" href="@Url.Action("Create", "Home", new { doctorId = item.DoctorID })">Book Appointment</a>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Doctor Widget -->
+                }
+            </div>
+        </div>
+    </div>
+</div>

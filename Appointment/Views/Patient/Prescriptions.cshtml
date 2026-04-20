@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "My Prescriptions";
+    var prescriptions = ViewBag.Prescriptions as List<Appointment.Models.PrescriptionViewModel>;
+    var labTests = ViewBag.LabTests as List<Appointment.Models.LabTestViewModel>;
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">My Prescriptions</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">My Prescriptions</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                @Html.Partial("PatientSidebar")
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Prescriptions</h4>
+                    </div>
+                    <div class="card-body">
+                        @if (prescriptions != null && prescriptions.Any())
+                        {
+                            <div class="table-responsive">
+                                <table class="table table-hover table-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Prescription ID</th>
+                                            <th>Medicine Name</th>
+                                            <th>Dosage</th>
+                                            <th>Duration</th>
+                                            <th>Doctor</th>
+                                            <th>Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var prescription in prescriptions)
+                                        {
+                                            <tr>
+                                                <td>@prescription.PrescriptionID</td>
+                                                <td>@prescription.MedicineName</td>
+                                                <td>@prescription.Dosage</td>
+                                                <td>@prescription.Duration</td>
+                                                <td>@prescription.FirstName @prescription.LastName</td>
+                                                <td>@prescription.Notes</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <p>No prescriptions found.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->

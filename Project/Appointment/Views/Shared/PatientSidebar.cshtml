@@ -1,0 +1,74 @@
+﻿@{
+    var userType = Session["UserType"] as string;
+    var userId = Session["UserID"] as int?;
+    var name = Session["UserName"] as string;
+    var userImage = Session["p_img"] as string;
+    var userEmail = Session["p_email"] as string;
+
+    // Debug output for troubleshooting
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+    System.Diagnostics.Debug.WriteLine($"Current UserID: {userId}");
+    System.Diagnostics.Debug.WriteLine($"Current UserName: {name}");
+}
+
+<div class="profile-sidebar">
+    <div class="widget-profile pro-widget-content">
+        <div class="profile-info-widget">
+            <a href="#" class="booking-doc-img">
+                <!-- Use the user's profile image from the session -->
+                <img src="~/assets/img/patients/patient1.jpg" alt="User Image">
+            </a>
+            <div class="profile-det-info">
+                <!-- Use the user's name from the session -->
+                <h3>@name</h3>
+                <div class="patient-details">
+                    <!-- Use the user's email from the session -->
+                    <h5 class="mb-0"><i class="fas fa-mail"></i> @userEmail</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-widget">
+        <nav class="dashboard-menu">
+            <ul>
+                <li class="active">
+                    <a href="@Url.Action("Index", "Patient", new { id = userId })">
+                        <i class="fas fa-columns"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="\Patient\Prescriptions">
+                        <i class=""></i>
+                        <span>Prescription</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("LabTest", "Patient")">
+                        <i class=""></i>
+                        <span>Lab Test</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Search", "Home")">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Edits", "Patient")">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Profile Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("SignOut", "Signin")">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

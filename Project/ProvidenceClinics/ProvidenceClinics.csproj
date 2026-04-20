@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C764DC5-971F-45B9-9A40-9581AB69810D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProvidenceClinics</RootNamespace>
+    <AssemblyName>ProvidenceClinics</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44331</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\e_classController.cs" />
+    <Compile Include="Controllers\e_enrollmentsController.cs" />
+    <Compile Include="Controllers\e_lspController.cs" />
+    <Compile Include="Controllers\e_lsp_typeController.cs" />
+    <Compile Include="Controllers\e_staffController.cs" />
+    <Compile Include="Controllers\e_staff_typeController.cs" />
+    <Compile Include="Controllers\e_studentsController.cs" />
+    <Compile Include="Controllers\e_subjectController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\m_categoriesController.cs" />
+    <Compile Include="Controllers\m_customersController.cs" />
+    <Compile Include="Controllers\m_medicinesController.cs" />
+    <Compile Include="Controllers\m_ordersController.cs" />
+    <Compile Include="Controllers\m_order_detailsController.cs" />
+    <Compile Include="Controllers\m_suppliersController.cs" />
+    <Compile Include="Controllers\m_typesController.cs" />
+    <Compile Include="Controllers\RegistersController.cs" />
+    <Compile Include="Controllers\RegisterTypesController.cs" />
+    <Compile Include="Controllers\SigninController.cs" />
+    <Compile Include="Controllers\s_AppointmentController.cs" />
+    <Compile Include="Controllers\s_AppointmentDetailController.cs" />
+    <Compile Include="Controllers\s_CategoryController.cs" />
+    <Compile Include="Controllers\s_ContactController.cs" />
+    <Compile Include="Controllers\s_DoctorController.cs" />
+    <Compile Include="Controllers\s_DoctorScheduleController.cs" />
+    <Compile Include="Controllers\s_FeedbackController.cs" />
+    <Compile Include="Controllers\s_LabTestController.cs" />
+    <Compile Include="Controllers\s_LabTestPrescriptionController.cs" />
+    <Compile Include="Controllers\s_OrderController.cs" />
+    <Compile Include="Controllers\s_OrderDetailController.cs" />
+    <Compile Include="Controllers\s_PatientController.cs" />
+    <Compile Include="Controllers\s_PrescriptionController.cs" />
+    <Compile Include="Controllers\s_ProductController.cs" />
+    <Compile Include="Controllers\s_SpecialistController.cs" />
+    <Compile Include="Controllers\s_StatusController.cs" />
+    <Compile Include="Controllers\s_SupplierController.cs" />
+    <Compile Include="Controllers\s_TransactionController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\e_class.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\e_enrollments.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\e_lsp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\e_lsp_type.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\e_staff.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\e_staff_type.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\e_students.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\e_subject.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\m_categories.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\m_customers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\m_medicines.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\m_orders.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\m_order_details.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\m_suppliers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\m_types.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Register.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegisterType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Appointment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_AppointmentDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Contact.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Doctor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_DoctorSchedule.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Feedback.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_LabTest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_LabTestPrescription.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_OrderDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Patient.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_PatientHistory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Prescription.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Specialist.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Status.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Supplier.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\s_Transaction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\animate.html" />
+    <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\css\bootstrap.min.html" />
+    <Content Include="assets\css\index.html" />
+    <Content Include="assets\css\materialdesignicons.min.html" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\image-1.html" />
+    <Content Include="assets\img\image-10.html" />
+    <Content Include="assets\img\image-2.html" />
+    <Content Include="assets\img\image-3.html" />
+    <Content Include="assets\img\image-4.html" />
+    <Content Include="assets\img\image-5.html" />
+    <Content Include="assets\img\image-6.html" />
+    <Content Include="assets\img\image-7.html" />
+    <Content Include="assets\img\image-8.html" />
+    <Content Include="assets\img\image-9.html" />
+    <Content Include="assets\img\image.html" />
+    <Content Include="assets\img\img-01.jpg" />
+    <Content Include="assets\img\index.html" />
+    <Content Include="assets\img\login.jpg" />
+    <Content Include="assets\img\logo-white.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\profiles\avatar-01.jpg" />
+    <Content Include="assets\img\profiles\avatar-02.jpg" />
+    <Content Include="assets\img\profiles\avatar-03.jpg" />
+    <Content Include="assets\img\profiles\avatar-04.jpg" />
+    <Content Include="assets\img\profiles\avatar-05.jpg" />
+    <Content Include="assets\img\profiles\avatar-06.jpg" />
+    <Content Include="assets\img\profiles\avatar-07.jpg" />
+    <Content Include="assets\img\profiles\avatar-08.jpg" />
+    <Content Include="assets\img\profiles\avatar-09.jpg" />
+    <Content Include="assets\img\profiles\avatar-10.jpg" />
+    <Content Include="assets\img\profiles\avatar-11.jpg" />
+    <Content Include="assets\img\profiles\avatar-13.jpg" />
+    <Content Include="assets\img\profiles\avatar-17.jpg" />
+    <Content Include="assets\img\user.jpg" />
+    <Content Include="assets\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="assets\js\bootstrap.min.html" />
+    <Content Include="assets\js\calander.js" />
+    <Content Include="assets\js\circle-progress.min.js" />
+    <Content Include="assets\js\form-validation.js" />
+    <Content Include="assets\js\index.html" />
+    <Content Include="assets\js\jquery-1.12.4.min.html" />
+    <Content Include="assets\js\jquery-3.6.0.min.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery.maskedinput.min.js" />
+    <Content Include="assets\js\main.html" />
+    <Content Include="assets\js\mask.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\smooth-scroll.min.html" />
+    <Content Include="assets\js\wow.min.html" />
+    <Content Include="assets\plugins\apexchart\apexcharts.min.js" />
+    <Content Include="assets\plugins\apexchart\chart-data.js" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\plugins\datatables\datatables.min.css" />
+    <Content Include="assets\plugins\datatables\datatables.min.js" />
+    <Content Include="assets\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="assets\plugins\fontawesome\css\all.min.css" />
+    <Content Include="assets\plugins\fontawesome\css\fontawesome.min.css" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.html" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.html" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.html" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="assets\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="assets\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="assets\plugins\fullcalendar\jquery.fullcalendar.js" />
+    <Content Include="assets\plugins\select2\css\select2.min.css" />
+    <Content Include="assets\plugins\select2\js\select2.min.js" />
+    <Content Include="assets\plugins\simple-calendar\jquery.simple-calendar.js" />
+    <Content Include="assets\plugins\simple-calendar\simple-calendar.css" />
+    <Content Include="assets\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\plugins\summernote\dist\summernote-bs4.css" />
+    <Content Include="assets\plugins\summernote\dist\summernote-bs4.min.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400d41d.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400d41d.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900d41d.eot" />
+    <Content Include="assets\plugins\summernote\dist\font\summernotec360.eot" />
+    <Content Include="assets\plugins\summernote\dist\font\summernotec360.ttf" />
+    <Content Include="assets\plugins\summernote\dist\font\summernotec360.woff" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Cities\Create.cshtml" />
+    <Content Include="Views\Cities\Delete.cshtml" />
+    <Content Include="Views\Cities\Details.cshtml" />
+    <Content Include="Views\Cities\Edit.cshtml" />
+    <Content Include="Views\Cities\Index.cshtml" />
+    <Content Include="Views\Countries\Create.cshtml" />
+    <Content Include="Views\Countries\Delete.cshtml" />
+    <Content Include="Views\Countries\Details.cshtml" />
+    <Content Include="Views\Countries\Edit.cshtml" />
+    <Content Include="Views\Countries\Index.cshtml" />
+    <Content Include="Views\e_class\Create.cshtml" />
+    <Content Include="Views\e_class\Delete.cshtml" />
+    <Content Include="Views\e_class\Details.cshtml" />
+    <Content Include="Views\e_class\Edit.cshtml" />
+    <Content Include="Views\e_class\Index.cshtml" />
+    <Content Include="Views\e_enrollments\Create.cshtml" />
+    <Content Include="Views\e_enrollments\Delete.cshtml" />
+    <Content Include="Views\e_enrollments\Details.cshtml" />
+    <Content Include="Views\e_enrollments\Edit.cshtml" />
+    <Content Include="Views\e_enrollments\Index.cshtml" />
+    <Content Include="Views\e_lsp\Create.cshtml" />
+    <Content Include="Views\e_lsp\Delete.cshtml" />
+    <Content Include="Views\e_lsp\Details.cshtml" />
+    <Content Include="Views\e_lsp\Edit.cshtml" />
+    <Content Include="Views\e_lsp\Index.cshtml" />
+    <Content Include="Views\e_lsp_type\Create.cshtml" />
+    <Content Include="Views\e_lsp_type\Delete.cshtml" />
+    <Content Include="Views\e_lsp_type\Details.cshtml" />
+    <Content Include="Views\e_lsp_type\Edit.cshtml" />
+    <Content Include="Views\e_lsp_type\Index.cshtml" />
+    <Content Include="Views\e_staff\Create.cshtml" />
+    <Content Include="Views\e_staff\Delete.cshtml" />
+    <Content Include="Views\e_staff\Details.cshtml" />
+    <Content Include="Views\e_staff\Edit.cshtml" />
+    <Content Include="Views\e_staff\Index.cshtml" />
+    <Content Include="Views\e_staff_type\Create.cshtml" />
+    <Content Include="Views\e_staff_type\Delete.cshtml" />
+    <Content Include="Views\e_staff_type\Details.cshtml" />
+    <Content Include="Views\e_staff_type\Edit.cshtml" />
+    <Content Include="Views\e_staff_type\Index.cshtml" />
+    <Content Include="Views\e_students\Create.cshtml" />
+    <Content Include="Views\e_students\Delete.cshtml" />
+    <Content Include="Views\e_students\Details.cshtml" />
+    <Content Include="Views\e_students\Edit.cshtml" />
+    <Content Include="Views\e_students\Index.cshtml" />
+    <Content Include="Views\e_subject\Create.cshtml" />
+    <Content Include="Views\e_subject\Delete.cshtml" />
+    <Content Include="Views\e_subject\Details.cshtml" />
+    <Content Include="Views\e_subject\Edit.cshtml" />
+    <Content Include="Views\e_subject\Index.cshtml" />
+    <Content Include="Views\Home\Appointment.cshtml" />
+    <Content Include="Views\Home\Ecommerce.cshtml" />
+    <Content Include="Views\Home\Education.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\m_categories\Create.cshtml" />
+    <Content Include="Views\m_categories\Delete.cshtml" />
+    <Content Include="Views\m_categories\Details.cshtml" />
+    <Content Include="Views\m_categories\Edit.cshtml" />
+    <Content Include="Views\m_categories\Index.cshtml" />
+    <Content Include="Views\m_customers\Create.cshtml" />
+    <Content Include="Views\m_customers\Delete.cshtml" />
+    <Content Include="Views\m_customers\Details.cshtml" />
+    <Content Include="Views\m_customers\Edit.cshtml" />
+    <Content Include="Views\m_customers\Index.cshtml" />
+    <Content Include="Views\m_medicines\Create.cshtml" />
+    <Content Include="Views\m_medicines\Delete.cshtml" />
+    <Content Include="Views\m_medicines\Details.cshtml" />
+    <Content Include="Views\m_medicines\Edit.cshtml" />
+    <Content Include="Views\m_medicines\Index.cshtml" />
+    <Content Include="Views\m_orders\Create.cshtml" />
+    <Content Include="Views\m_orders\Delete.cshtml" />
+    <Content Include="Views\m_orders\Details.cshtml" />
+    <Content Include="Views\m_orders\Edit.cshtml" />
+    <Content Include="Views\m_orders\Index.cshtml" />
+    <Content Include="Views\m_order_details\Create.cshtml" />
+    <Content Include="Views\m_order_details\Delete.cshtml" />
+    <Content Include="Views\m_order_details\Details.cshtml" />
+    <Content Include="Views\m_order_details\Edit.cshtml" />
+    <Content Include="Views\m_order_details\Index.cshtml" />
+    <Content Include="Views\m_suppliers\Create.cshtml" />
+    <Content Include="Views\m_suppliers\Delete.cshtml" />
+    <Content Include="Views\m_suppliers\Details.cshtml" />
+    <Content Include="Views\m_suppliers\Edit.cshtml" />
+    <Content Include="Views\m_suppliers\Index.cshtml" />
+    <Content Include="Views\m_types\Create.cshtml" />
+    <Content Include="Views\m_types\Delete.cshtml" />
+    <Content Include="Views\m_types\Details.cshtml" />
+    <Content Include="Views\m_types\Edit.cshtml" />
+    <Content Include="Views\m_types\Index.cshtml" />
+    <Content Include="Views\Registers\Create.cshtml" />
+    <Content Include="Views\Registers\Delete.cshtml" />
+    <Content Include="Views\Registers\Details.cshtml" />
+    <Content Include="Views\Registers\Edit.cshtml" />
+    <Content Include="Views\Registers\Index.cshtml" />
+    <Content Include="Views\RegisterTypes\Create.cshtml" />
+    <Content Include="Views\RegisterTypes\Delete.cshtml" />
+    <Content Include="Views\RegisterTypes\Details.cshtml" />
+    <Content Include="Views\RegisterTypes\Edit.cshtml" />
+    <Content Include="Views\RegisterTypes\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\sidebar.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Signin\Index.cshtml" />
+    <Content Include="Views\s_AppointmentDetail\Create.cshtml" />
+    <Content Include="Views\s_AppointmentDetail\Delete.cshtml" />
+    <Content Include="Views\s_AppointmentDetail\Details.cshtml" />
+    <Content Include="Views\s_AppointmentDetail\Edit.cshtml" />
+    <Content Include="Views\s_AppointmentDetail\Index.cshtml" />
+    <Content Include="Views\s_Appointment\Create.cshtml" />
+    <Content Include="Views\s_Appointment\Delete.cshtml" />
+    <Content Include="Views\s_Appointment\Details.cshtml" />
+    <Content Include="Views\s_Appointment\Edit.cshtml" />
+    <Content Include="Views\s_Appointment\Index.cshtml" />
+    <Content Include="Views\s_Category\Create.cshtml" />
+    <Content Include="Views\s_Category\Delete.cshtml" />
+    <Content Include="Views\s_Category\Details.cshtml" />
+    <Content Include="Views\s_Category\Edit.cshtml" />
+    <Content Include="Views\s_Category\Index.cshtml" />
+    <Content Include="Views\s_Contact\Create.cshtml" />
+    <Content Include="Views\s_Contact\Delete.cshtml" />
+    <Content Include="Views\s_Contact\Details.cshtml" />
+    <Content Include="Views\s_Contact\Edit.cshtml" />
+    <Content Include="Views\s_Contact\Index.cshtml" />
+    <Content Include="Views\s_DoctorSchedule\Create.cshtml" />
+    <Content Include="Views\s_DoctorSchedule\Delete.cshtml" />
+    <Content Include="Views\s_DoctorSchedule\Details.cshtml" />
+    <Content Include="Views\s_DoctorSchedule\Edit.cshtml" />
+    <Content Include="Views\s_DoctorSchedule\Index.cshtml" />
+    <Content Include="Views\s_Doctor\Create.cshtml" />
+    <Content Include="Views\s_Doctor\Delete.cshtml" />
+    <Content Include="Views\s_Doctor\Details.cshtml" />
+    <Content Include="Views\s_Doctor\Edit.cshtml" />
+    <Content Include="Views\s_Doctor\Index.cshtml" />
+    <Content Include="Views\s_Feedback\Create.cshtml" />
+    <Content Include="Views\s_Feedback\Delete.cshtml" />
+    <Content Include="Views\s_Feedback\Details.cshtml" />
+    <Content Include="Views\s_Feedback\Edit.cshtml" />
+    <Content Include="Views\s_Feedback\Index.cshtml" />
+    <Content Include="Views\s_LabTestPrescription\Create.cshtml" />
+    <Content Include="Views\s_LabTestPrescription\Delete.cshtml" />
+    <Content Include="Views\s_LabTestPrescription\Details.cshtml" />
+    <Content Include="Views\s_LabTestPrescription\Edit.cshtml" />
+    <Content Include="Views\s_LabTestPrescription\Index.cshtml" />
+    <Content Include="Views\s_LabTest\Create.cshtml" />
+    <Content Include="Views\s_LabTest\Delete.cshtml" />
+    <Content Include="Views\s_LabTest\Details.cshtml" />
+    <Content Include="Views\s_LabTest\Edit.cshtml" />
+    <Content Include="Views\s_LabTest\Index.cshtml" />
+    <Content Include="Views\s_OrderDetail\Create.cshtml" />
+    <Content Include="Views\s_OrderDetail\Delete.cshtml" />
+    <Content Include="Views\s_OrderDetail\Details.cshtml" />
+    <Content Include="Views\s_OrderDetail\Edit.cshtml" />
+    <Content Include="Views\s_OrderDetail\Index.cshtml" />
+    <Content Include="Views\s_Order\Create.cshtml" />
+    <Content Include="Views\s_Order\Delete.cshtml" />
+    <Content Include="Views\s_Order\Details.cshtml" />
+    <Content Include="Views\s_Order\Edit.cshtml" />
+    <Content Include="Views\s_Order\Index.cshtml" />
+    <Content Include="Views\s_Patient\Create.cshtml" />
+    <Content Include="Views\s_Patient\Delete.cshtml" />
+    <Content Include="Views\s_Patient\Details.cshtml" />
+    <Content Include="Views\s_Patient\Edit.cshtml" />
+    <Content Include="Views\s_Patient\Index.cshtml" />
+    <Content Include="Views\s_Prescription\Create.cshtml" />
+    <Content Include="Views\s_Prescription\Delete.cshtml" />
+    <Content Include="Views\s_Prescription\Details.cshtml" />
+    <Content Include="Views\s_Prescription\Edit.cshtml" />
+    <Content Include="Views\s_Prescription\Index.cshtml" />
+    <Content Include="Views\s_Product\Create.cshtml" />
+    <Content Include="Views\s_Product\Delete.cshtml" />
+    <Content Include="Views\s_Product\Details.cshtml" />
+    <Content Include="Views\s_Product\Edit.cshtml" />
+    <Content Include="Views\s_Product\Index.cshtml" />
+    <Content Include="Views\s_Specialist\Create.cshtml" />
+    <Content Include="Views\s_Specialist\Delete.cshtml" />
+    <Content Include="Views\s_Specialist\Details.cshtml" />
+    <Content Include="Views\s_Specialist\Edit.cshtml" />
+    <Content Include="Views\s_Specialist\Index.cshtml" />
+    <Content Include="Views\s_Status\Create.cshtml" />
+    <Content Include="Views\s_Status\Delete.cshtml" />
+    <Content Include="Views\s_Status\Details.cshtml" />
+    <Content Include="Views\s_Status\Edit.cshtml" />
+    <Content Include="Views\s_Status\Index.cshtml" />
+    <Content Include="Views\s_Supplier\Create.cshtml" />
+    <Content Include="Views\s_Supplier\Delete.cshtml" />
+    <Content Include="Views\s_Supplier\Details.cshtml" />
+    <Content Include="Views\s_Supplier\Edit.cshtml" />
+    <Content Include="Views\s_Supplier\Index.cshtml" />
+    <Content Include="Views\s_Transaction\Create.cshtml" />
+    <Content Include="Views\s_Transaction\Delete.cshtml" />
+    <Content Include="Views\s_Transaction\Details.cshtml" />
+    <Content Include="Views\s_Transaction\Edit.cshtml" />
+    <Content Include="Views\s_Transaction\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50190</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44331/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Appointment.Models.s_PatientHistory>
+
+@{
+    ViewBag.Title = "Doctor Dashboard";
+    var appointments = ViewBag.Appointments as List<Appointment.Models.AppointmentViewModel>;
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+
+
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+
+
+                @Html.Partial("_DoctorSidebar")
+
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="card">
+                    <div class="card-body pt-0">
+                        <div class="card card-table mb-0">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <h2>My Patient </h2>
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>History ID</th>
+                                                <th>Patient ID</th>
+                                                <th>Visit Date</th>
+                                                <th>Visit Time</th>
+                                                <th>Notes</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>@item.HistoryID</td>
+                                                    <td>@item.PatientID</td>
+                                                    <td>@item.VisitDate</td>
+                                                    <td>@item.VisitTime</td>
+                                                    <td>@item.Notes</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Appointment Tab -->
+                </div>
+                <!-- Tab Content -->
+            </div>
+        </div>
+    </div>
+
+</div>

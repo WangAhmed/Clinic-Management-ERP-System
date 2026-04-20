@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.m_customers>
+
+@{
+    ViewBag.Title = "Index Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Customers</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/Home/Index">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Medicine</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                    <a href="/m_customers/Create" class="btn btn-primary">Add New Customer<i class="fas fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            RegId
+                                        </th>
+                                        <th>
+                                            Image
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Address
+                                        </th>
+                                        <th>
+                                            Phone
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Register.Username)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.image)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.address)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.phone)
+                                            </td>
+                                            <td>
+                                                <button> @Html.ActionLink("Edit", "Edit", new { id = item.cusid }) </button> |
+                                                <button> @Html.ActionLink("Details", "Details", new { id = item.cusid }) </button> |
+                                                <button> @Html.ActionLink("Delete", "Delete", new { id = item.cusid })</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                 </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+</div>

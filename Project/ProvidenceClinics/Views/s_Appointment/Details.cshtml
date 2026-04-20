@@ -1,0 +1,87 @@
+﻿@model ProvidenceClinics.Models.s_Appointment
+
+@{
+    ViewBag.Title = "Details Appointment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Appointment Details</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/s_Appointment/Index">Appointment</a></li>
+                        <li class="breadcrumb-item active">Appointment Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Doctor Name
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.s_Doctor.FirstName)
+                                </dd>
+
+                                <dt>
+                                    Patient Name
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.s_Patient.FirstName)
+                                </dd>
+
+                                <dt>
+                                    Appointment Date
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.AppointmentDate)
+                                </dd>
+
+                                <dt>
+                                    Appointment Time
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.AppointmentTime)
+                                </dd>
+
+                                <dt>
+                                    Fees
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.fee)
+                                </dd>
+
+
+                                <dt>
+                                    Status
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.s_Status.StatusName)
+                                </dd>
+
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

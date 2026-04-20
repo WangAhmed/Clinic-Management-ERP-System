@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "My Lab Tests";
+    var labTests = ViewBag.LabTests as List<Appointment.Models.LabTestViewModel>;
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">My Lab Tests</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">My Lab Tests</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                @Html.Partial("PatientSidebar")
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Lab Tests</h4>
+                    </div>
+                    <div class="card-body">
+                        @if (labTests != null && labTests.Any())
+                        {
+                            <div class="table-responsive">
+                                <table class="table table-hover table-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Test ID</th>
+                                            <th>Test Name</th>
+                                            <th>Doctor</th>
+                                            <th>Test Date</th>
+                                            <th>Price</th>
+                                            <th>Chemicals Used</th>
+                                            <th>Lab Products Used</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var test in labTests)
+                                        {
+                                            <tr>
+                                                <td>@test.LabTestID</td>
+                                                <td>@test.TestName</td>
+                                                <td>@test.FirstName @test.LastName</td>
+                                                <td>@test.TestDate.ToShortDateString()</td>
+                                                <td>@test.Price.ToString("C")</td>
+                                                <td>@test.ChemicalsUsed</td>
+                                                <td>@test.LabProductsUsed</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <p>No lab tests found.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->

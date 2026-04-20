@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5138E9A-F8E8-45E2-8208-064A7266F0E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsAdminPanel</RootNamespace>
+    <AssemblyName>WindowsFormsAdminPanel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catid.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Catid.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="e_class_enrollments.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>e_class_enrollments.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="e_lsp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>e_lsp.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="e_staff.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>e_staff.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="e_students.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>e_students.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="e_subjects.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>e_subjects.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\rptlabtest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\rptlabtest.Designer.cs">
+      <DependentUpon>rptlabtest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptappointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptappointment.Designer.cs">
+      <DependentUpon>rptappointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptdoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptdoctor.Designer.cs">
+      <DependentUpon>rptdoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptlabtest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptlabtest.Designer.cs">
+      <DependentUpon>rptlabtest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptorderdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptorderdetails.Designer.cs">
+      <DependentUpon>rptorderdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="in stock.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>in stock.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Name.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Name.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Order Detail.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Order Detail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Order.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Order.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptCat.Designer.cs">
+      <DependentUpon>rptCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptcustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptcustomer.Designer.cs">
+      <DependentUpon>rptcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptenrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptenrollment.Designer.cs">
+      <DependentUpon>rptenrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptlsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptlsp.Designer.cs">
+      <DependentUpon>rptlsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptmedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptmedicine.Designer.cs">
+      <DependentUpon>rptmedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptorder.Designer.cs">
+      <DependentUpon>rptorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptpatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptpatient.Designer.cs">
+      <DependentUpon>rptpatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptscategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptscategories.Designer.cs">
+      <DependentUpon>rptscategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptStaff.Designer.cs">
+      <DependentUpon>rptStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptstudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptstudent.Designer.cs">
+      <DependentUpon>rptstudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptsubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptsubject.Designer.cs">
+      <DependentUpon>rptsubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptsupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptsupplier.Designer.cs">
+      <DependentUpon>rptsupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rpttransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rpttransaction.Designer.cs">
+      <DependentUpon>rpttransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Supplier.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="s_appointment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_appointment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="s_catagory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_catagory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="s_docter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_docter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="s_labtest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_labtest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="s_Transection.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_Transection.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Catid.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Catid.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="e_class_enrollments.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>e_class_enrollments.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="e_lsp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>e_lsp.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="e_staff.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>e_staff.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="e_students.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>e_students.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="e_subjects.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>e_subjects.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="in stock.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>in stock.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Name.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Name.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order Detail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Order Detail.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Order.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientInfo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="rptappointment.resx">
+      <DependentUpon>rptappointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCat.resx">
+      <DependentUpon>rptCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptcustomer.resx">
+      <DependentUpon>rptcustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptdoctor.resx">
+      <DependentUpon>rptdoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptenrollment.resx">
+      <DependentUpon>rptenrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptlabtest.resx">
+      <DependentUpon>rptlabtest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptlsp.resx">
+      <DependentUpon>rptlsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptmedicine.resx">
+      <DependentUpon>rptmedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptorder.resx">
+      <DependentUpon>rptorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptorderdetails.resx">
+      <DependentUpon>rptorderdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptpatient.resx">
+      <DependentUpon>rptpatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptscategories.resx">
+      <DependentUpon>rptscategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStaff.resx">
+      <DependentUpon>rptStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptstudent.resx">
+      <DependentUpon>rptstudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptsubject.resx">
+      <DependentUpon>rptsubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptsupplier.resx">
+      <DependentUpon>rptsupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpttransaction.resx">
+      <DependentUpon>rpttransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Supplier.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="s_appointment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>s_appointment.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="s_catagory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>s_catagory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="s_docter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>s_docter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="s_labtest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>s_labtest.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="s_Transection.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>s_Transection.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

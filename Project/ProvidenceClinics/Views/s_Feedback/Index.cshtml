@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.s_Feedback>
+
+@{
+    ViewBag.Title = "Index FeedBack";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title"></h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Dashboard</a></li>
+                        <li class="breadcrumb-item active">FeedBack</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Doctor Name
+                                        <th>
+                                            Patient Name
+                                        </th>
+                                        <th>
+                                            Comment
+                                        </th>
+                                        <th>
+                                            Rating
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.s_Doctor.FirstName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.s_Patient.FirstName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Comments)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Rating)
+                                            </td>
+                                            <td>
+                                                <button>@Html.ActionLink("Edit", "Edit", new { id = item.FeedbackID }) </button> |
+                                                <button>@Html.ActionLink("Details", "Details", new { id = item.FeedbackID }) </button> |
+                                                <button>@Html.ActionLink("Delete", "Delete", new { id = item.FeedbackID }) </button>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+</div>

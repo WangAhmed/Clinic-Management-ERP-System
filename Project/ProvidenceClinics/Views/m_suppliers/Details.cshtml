@@ -1,0 +1,75 @@
+﻿@model ProvidenceClinics.Models.m_suppliers
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Suppliers</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/m_suppliers/Index">Suppliers</a></li>
+                        <li class="breadcrumb-item active">Add Suppliers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                           
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.name)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.name)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.contact_name)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.contact_name)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.address)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.address)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.phone)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.phone)
+                                </dd>
+
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+
+</div>
+<div>
+ 

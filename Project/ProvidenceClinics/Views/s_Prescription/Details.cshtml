@@ -1,0 +1,59 @@
+﻿@model ProvidenceClinics.Models.s_Prescription
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>s_Prescription</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dosage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dosage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.m_medicines.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.m_medicines.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.s_Appointment.AppointmentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.s_Appointment.AppointmentID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PrescriptionID }) |
+    @Html.ActionLink("Cancel", "Index")
+</p>

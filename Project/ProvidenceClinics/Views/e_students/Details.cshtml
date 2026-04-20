@@ -1,0 +1,75 @@
+﻿@model ProvidenceClinics.Models.e_students
+
+@{
+    ViewBag.Title = "Student Details ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Students Details</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\e_students\Index">Student</a></li>
+                        <li class="breadcrumb-item active">students Detail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    RegID
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Register.RegisterID)
+                                </dd>
+                                <dt>
+                                    Name
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.name)
+                                </dd>
+
+                                <dt>
+                                    Father Name
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.f_name)
+                                </dd>
+
+                                <dt>
+                                    Image
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.image)
+                                </dd>
+
+                                <dt>
+                                    Age
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.age)
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

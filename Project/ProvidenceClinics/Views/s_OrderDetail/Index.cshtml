@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.s_OrderDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">S OrderDetail</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/s_OrderDetail/Create">Dashboard</a></li>
+                        <li class="breadcrumb-item active">S OrderDetail</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                   
+                    <a href="/s_OrderDetail/Create" class="btn btn-primary">Add New S Order Detail <i class="fas fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Product
+                                        </th>
+                                        <th>
+                                            Quantity
+                                        </th>
+                                        <th>
+                                            Unit Prize
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ProductID)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Quantity)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.UnitPrice)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.s_Order.Status)
+                                            </td>
+                                            <td>
+                                                <button>@Html.ActionLink("Edit", "Edit", new { id = item.OrderDetailID })  </button> |
+                                                <button>@Html.ActionLink("Details", "Details", new { id = item.OrderDetailID }) </button> |
+                                                <button>@Html.ActionLink("Delete", "Delete", new { id = item.OrderDetailID }) </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>                            
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+</div>

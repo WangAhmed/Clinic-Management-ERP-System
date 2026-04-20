@@ -1,0 +1,80 @@
+﻿@{
+    var userType = Session["UserType"] as string;
+    var userId = Session["UserID"] as int?;
+    var userImage = Session["image"] as string;
+    var name = Session["UserName"] as string;
+
+    // Debug output for troubleshooting
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+    System.Diagnostics.Debug.WriteLine($"Current UserID: {userId}");
+    System.Diagnostics.Debug.WriteLine($"Current UserImage: {userImage}");
+    System.Diagnostics.Debug.WriteLine($"Current UserName: {name}");
+}
+
+<!-- Profile Sidebar -->
+<div class="profile-sidebar">
+    <div class="widget-profile pro-widget-content">
+        <div class="profile-info-widget">
+            <a href="#" class="booking-doc-img">
+                <!-- Use Razor syntax to dynamically set the image source -->
+                <img src="~/@(!string.IsNullOrEmpty(userImage) ? Url.Content(userImage) : Url.Content("~/images/default-doctor.png"))" class="img-fluid" alt="Doctor Image">
+
+            </a>
+            <div class="profile-det-info">
+                <!-- Display user information using Razor syntax -->
+                <h3>@name</h3>
+                <div class="patient-details">
+                    <h5 class="mb-0">@userType</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-widget">
+        <nav class="dashboard-menu">
+            <ul>
+                <li class="active">
+                    <a href="@Url.Action("Index", "Doctor", new { id = userId })">
+                        <i class="fas fa-columns"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="\s_Prescription\Index">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescription</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("MyPatient", "Doctor")">
+                        <i class="fas fa-prescription"></i>
+                        <span>My Patient</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Edit", "Doctor", new { id = userId })">
+                        <i class="fas fa-angle-double-right"></i>Profile Setting
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "s_LabTest")">
+                        <i class="fas fa-flask"></i>
+                        <span>LabTest</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "s_DoctorSchedule")">
+                        <i class="fas fa-hourglass-start"></i>
+                        <span>Schedule Timings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("SignOut", "Signin")">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- /Profile Sidebar -->

@@ -1,0 +1,109 @@
+﻿@model Appointment.Models.s_LabTest
+
+@{
+    ViewBag.Title = "Create";
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Create Lab Test</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">Create Lab Test</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                @Html.Partial("_DoctorSidebar")
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="card">
+                    <div class="card-body">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TestName, "Test Name", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.TestName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TestName, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PatientID, "Patient", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownList("PatientID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.PatientID, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TestDate, "Test Date", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.TestDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TestDate, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ChemicalsUsed, "Chemicals Used", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.ChemicalsUsed, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ChemicalsUsed, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LabProductsUsed, "Lab Products Used", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.LabProductsUsed, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LabProductsUsed, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Cost, "Cost", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Price, "Price", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <a href="@Url.Action("Index", "s_LabTest")" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->

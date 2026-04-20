@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.City>
+
+@{
+    ViewBag.Title = "City Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">City</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Registeration</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                    <a href="\Cities\Create" class="btn btn-primary">ADD New City <i class="fas fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            City
+                                        </th>
+                                        <th>
+                                            Country
+                                        </th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CityName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Country.CountryName)
+                                            </td>
+                                            <td>
+                                                <Button>@Html.ActionLink("Edit", "Edit", new { id = item.CityID })</Button> |
+                                                <Button>@Html.ActionLink("Delete", "Delete", new { id = item.CityID })</Button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+</div>
+

@@ -1,0 +1,65 @@
+﻿@model ProvidenceClinics.Models.e_lsp
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">e_lsp Details</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="students.html">Student</a></li>
+                        <li class="breadcrumb-item active">e_lsp Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            <h4>e_lsp</h4>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.name)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.name)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.description)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.description)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.e_lsp_type.type)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.e_lsp_type.type)
+                                </dd>
+
+                            </dl>
+                        </div>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.lspid }) |
+                            @Html.ActionLink("Cancel", "Index")
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|c:\\users\\zeeshan\\desktop\\eproject (providence clinic)\\project\\providenceclinics\\views\\home\\education.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:views\\home\\education.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|c:\\users\\zeeshan\\desktop\\eproject (providence clinic)\\project\\providenceclinics\\views\\home\\appointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:views\\home\\appointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|c:\\users\\zeeshan\\desktop\\eproject (providence clinic)\\project\\providenceclinics\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|c:\\users\\zeeshan\\desktop\\eproject (providence clinic)\\project\\providenceclinics\\views\\home\\ecommerce.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:views\\home\\ecommerce.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|c:\\users\\zeeshan\\desktop\\eproject (providence clinic)\\project\\providenceclinics\\controllers\\signincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:controllers\\signincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\controllers\\registerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:controllers\\registerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\controllers\\s_doctorschedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:controllers\\s_doctorschedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\views\\s_doctorschedule\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:views\\s_doctorschedule\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\views\\s_doctorschedule\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:views\\s_doctorschedule\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\views\\s_doctorschedule\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C764DC5-971F-45B9-9A40-9581AB69810D}|ProvidenceClinics.csproj|solutionrelative:views\\s_doctorschedule\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Education.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\Home\\Education.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Education.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\Home\\Education.cshtml",
+              "RelativeToolTip": "Views\\Home\\Education.cshtml",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAAAE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-11T22:57:38.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-11T22:57:28.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ecommerce.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\Home\\Ecommerce.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Ecommerce.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\Home\\Ecommerce.cshtml",
+              "RelativeToolTip": "Views\\Home\\Ecommerce.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAEUAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-11T22:52:56.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Appointment.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\Home\\Appointment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Appointment.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\Home\\Appointment.cshtml",
+              "RelativeToolTip": "Views\\Home\\Appointment.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAE0AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-11T22:43:11.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SigninController.cs",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Controllers\\SigninController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SigninController.cs",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Controllers\\SigninController.cs",
+              "RelativeToolTip": "Controllers\\SigninController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFIAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T22:35:20.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegistersController.cs",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Controllers\\RegistersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RegistersController.cs",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Controllers\\RegistersController.cs",
+              "RelativeToolTip": "Controllers\\RegistersController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T08:14:35.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "s_DoctorScheduleController.cs",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Controllers\\s_DoctorScheduleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\s_DoctorScheduleController.cs",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Controllers\\s_DoctorScheduleController.cs",
+              "RelativeToolTip": "Controllers\\s_DoctorScheduleController.cs",
+              "ViewState": "AQIAAKcAAAAAAAAAAAAmwMoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T04:00:35.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\s_DoctorSchedule\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\s_DoctorSchedule\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\s_DoctorSchedule\\Edit.cshtml",
+              "RelativeToolTip": "Views\\s_DoctorSchedule\\Edit.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAEMAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T03:48:43.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\s_DoctorSchedule\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\s_DoctorSchedule\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\s_DoctorSchedule\\Create.cshtml",
+              "RelativeToolTip": "Views\\s_DoctorSchedule\\Create.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADkAAACBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T03:48:15.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\s_DoctorSchedule\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\s_DoctorSchedule\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Eproject (Providence Clinic)\\Project\\ProvidenceClinics\\Views\\s_DoctorSchedule\\Index.cshtml",
+              "RelativeToolTip": "Views\\s_DoctorSchedule\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAEoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T03:26:33.544Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

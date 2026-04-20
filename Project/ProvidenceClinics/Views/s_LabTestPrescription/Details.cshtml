@@ -1,0 +1,35 @@
+﻿@model ProvidenceClinics.Models.s_LabTestPrescription
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>s_LabTestPrescription</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.s_LabTest.TestName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.s_LabTest.TestName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.s_Prescription.Dosage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.s_Prescription.Dosage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LabTestPrescriptionID }) |
+    @Html.ActionLink("Cancel", "Index")
+</p>

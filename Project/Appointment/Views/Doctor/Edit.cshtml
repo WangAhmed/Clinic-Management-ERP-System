@@ -1,0 +1,167 @@
+﻿@model Appointment.Models.s_Doctor
+
+@{
+    ViewBag.Title = "Edit Doctor";
+    var appointments = ViewBag.Appointments as List<Appointment.Models.AppointmentViewModel>;
+    var userType = Session["UserType"] as string;
+    var userId = Session["UserID"] as int?;
+    var userImage = Session["image"] as string;
+    var name = Session["UserName"] as string;
+
+    // Debug output for troubleshooting
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+    System.Diagnostics.Debug.WriteLine($"Current UserID: {userId}");
+    System.Diagnostics.Debug.WriteLine($"Current UserImage: {userImage}");
+    System.Diagnostics.Debug.WriteLine($"Current UserName: {name}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Appointment Dashboard</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">Edit Profile</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                @Html.Partial("_DoctorSidebar")
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="content container-fluid">
+                    <div class="page-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="page-title">Edit Profile</h3>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Doctor")">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">Edit Profile</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-auto text-right float-right ml-auto">
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card card-table">
+                                <div class="card-body">
+
+                                    @using (Html.BeginForm("Edit", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-horizontal">
+                                            <hr />
+                                            @Html.ValidationSummary(true)
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.DoctorID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DisplayFor(model => model.DoctorID)
+                                                    @Html.HiddenFor(model => model.DoctorID)
+                                                </div>
+                                            </div>
+
+                                            <!-- Hidden regid field -->
+                                            @Html.HiddenFor(model => model.regid)
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.image, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @if (Model.image != null)
+                                                {
+                                                    <img class="img-fluid" alt="Doctor Image" src="~/@(!string.IsNullOrEmpty(Model.image) ? Url.Content(Model.image) : Url.Content("~/images/default-doctor.png")) " style="max-width: 200px; max-height: 200px;">
+                                                }
+                                                <input type="file" name="imageFile" />
+                                                @Html.ValidationMessageFor(model => model.image)
+                                            </div>
+                                        </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.FirstName)
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.LastName)
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.SpecialistID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownList("SpecialistID", (SelectList)ViewBag.SpecialistID, "Select a Specialist", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.SpecialistID)
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.ContactNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.ContactNumber)
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Email)
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-success" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->

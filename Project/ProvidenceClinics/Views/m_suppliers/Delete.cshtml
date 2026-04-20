@@ -1,0 +1,88 @@
+﻿@model ProvidenceClinics.Models.m_suppliers
+
+@{
+    ViewBag.Title = "Delete Med Supplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Delete Med Supplier</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/m_suppliers/Index">Med Supplier</a></li>
+                        <li class="breadcrumb-item active">Delete Med Supplier</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            
+                            <h3>Are you sure you want to delete this?</h3>
+                            <div>
+                                <hr />
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                       Med Supplier
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.name)
+                                    </dd>
+
+                                    <dt>
+                                       Name
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.contact_name)
+                                    </dd>
+
+                                    <dt>
+                                        Address
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.address)
+                                    </dd>
+
+                                    <dt>
+                                       Phone
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.phone)
+                                    </dd>
+
+                                </dl>
+
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Delete" class="btn btn-success" /> |
+                                        @Html.ActionLink("Cancel", "Index")
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+
+</div>
+

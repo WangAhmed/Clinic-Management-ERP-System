@@ -1,0 +1,1239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProvidenceClinicsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__City__CountryID__797309D9" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="Registers" Relationship="Self.FK__Register__CityID__282DF8C2" FromRole="City" ToRole="Register" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cities" Relationship="Self.FK__City__CountryID__797309D9" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Registers" Relationship="Self.FK__Register__Countr__2739D489" FromRole="Country" ToRole="Register" />
+  </EntityType>
+  <EntityType Name="e_class">
+    <Key>
+      <PropertyRef Name="classid" />
+    </Key>
+    <Property Name="classid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="e_enrollments" Relationship="Self.FK_e_enrollment_e_class" FromRole="e_class" ToRole="e_enrollments" />
+  </EntityType>
+  <EntityType Name="e_enrollments">
+    <Key>
+      <PropertyRef Name="enid" />
+    </Key>
+    <Property Name="enid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regid" Type="Int32" />
+    <Property Name="stdid" Type="Int32" />
+    <Property Name="classid" Type="Int32" />
+    <Property Name="subid" Type="Int32" />
+    <Property Name="lspid" Type="Int32" />
+    <Property Name="proid" Type="Int32" />
+    <Property Name="enrollment_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fee" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="e_class" Relationship="Self.FK_e_enrollment_e_class" FromRole="e_enrollments" ToRole="e_class" />
+    <NavigationProperty Name="e_lsp" Relationship="Self.FK_e_enrollment_e_lsp" FromRole="e_enrollments" ToRole="e_lsp" />
+    <NavigationProperty Name="e_students" Relationship="Self.FK_e_enrollment_e_students" FromRole="e_enrollments" ToRole="e_students" />
+    <NavigationProperty Name="e_staff" Relationship="Self.FK_e_enrollments_e_staff" FromRole="e_enrollments" ToRole="e_staff" />
+    <NavigationProperty Name="e_subject" Relationship="Self.FK_e_enrollments_e_subject" FromRole="e_enrollments" ToRole="e_subject" />
+  </EntityType>
+  <EntityType Name="e_lsp">
+    <Key>
+      <PropertyRef Name="lspid" />
+    </Key>
+    <Property Name="lspid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="type_id" Type="Int32" />
+    <NavigationProperty Name="e_enrollments" Relationship="Self.FK_e_enrollment_e_lsp" FromRole="e_lsp" ToRole="e_enrollments" />
+    <NavigationProperty Name="e_lsp_type" Relationship="Self.FK__e_lsp__type_id__0B91BA14" FromRole="e_lsp" ToRole="e_lsp_type" />
+  </EntityType>
+  <EntityType Name="e_lsp_type">
+    <Key>
+      <PropertyRef Name="lsptype_id" />
+    </Key>
+    <Property Name="lsptype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="e_lsp" Relationship="Self.FK__e_lsp__type_id__0B91BA14" FromRole="e_lsp_type" ToRole="e_lsp" />
+  </EntityType>
+  <EntityType Name="e_staff">
+    <Key>
+      <PropertyRef Name="proid" />
+    </Key>
+    <Property Name="proid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stype_id" Type="Int32" />
+    <Property Name="qualification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="e_enrollments" Relationship="Self.FK_e_enrollments_e_staff" FromRole="e_staff" ToRole="e_enrollments" />
+    <NavigationProperty Name="e_staff_type" Relationship="Self.FK_e_staff_e_staff_type" FromRole="e_staff" ToRole="e_staff_type" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_e_staff_Register" FromRole="e_staff" ToRole="Register" />
+  </EntityType>
+  <EntityType Name="e_staff_type">
+    <Key>
+      <PropertyRef Name="stype_id" />
+    </Key>
+    <Property Name="stype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="e_staff" Relationship="Self.FK_e_staff_e_staff_type" FromRole="e_staff_type" ToRole="e_staff" />
+  </EntityType>
+  <EntityType Name="e_students">
+    <Key>
+      <PropertyRef Name="stdid" />
+    </Key>
+    <Property Name="stdid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="f_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="Int32" />
+    <NavigationProperty Name="e_enrollments" Relationship="Self.FK_e_enrollment_e_students" FromRole="e_students" ToRole="e_enrollments" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_e_students_Register" FromRole="e_students" ToRole="Register" />
+  </EntityType>
+  <EntityType Name="e_subject">
+    <Key>
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="subid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="e_enrollments" Relationship="Self.FK_e_enrollments_e_subject" FromRole="e_subject" ToRole="e_enrollments" />
+  </EntityType>
+  <EntityType Name="m_categories">
+    <Key>
+      <PropertyRef Name="m_catid" />
+    </Key>
+    <Property Name="m_catid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="m_medicines" Relationship="Self.FK_m_medicine_m_categories" FromRole="m_categories" ToRole="m_medicines" />
+  </EntityType>
+  <EntityType Name="m_customers">
+    <Key>
+      <PropertyRef Name="cusid" />
+    </Key>
+    <Property Name="cusid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regid" Type="Int32" />
+    <Property Name="image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="m_orders" Relationship="Self.FK__m_orders__custom__68487DD7" FromRole="m_customers" ToRole="m_orders" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_m_customers_Register" FromRole="m_customers" ToRole="Register" />
+  </EntityType>
+  <EntityType Name="m_medicines">
+    <Key>
+      <PropertyRef Name="medid" />
+    </Key>
+    <Property Name="medid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="medtypeid" Type="Int32" />
+    <Property Name="catid" Type="Int32" />
+    <Property Name="m_supid" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="quantity_in_stock" Type="Int32" />
+    <NavigationProperty Name="m_categories" Relationship="Self.FK_m_medicine_m_categories" FromRole="m_medicines" ToRole="m_categories" />
+    <NavigationProperty Name="m_order_details" Relationship="Self.FK__m_order_d__medic__6C190EBB" FromRole="m_medicines" ToRole="m_order_details" />
+    <NavigationProperty Name="s_Prescription" Relationship="Self.FK__s_Prescri__Medic__2645B050" FromRole="m_medicines" ToRole="s_Prescription" />
+    <NavigationProperty Name="m_suppliers" Relationship="Self.FK_m_medicines_m_suppliers" FromRole="m_medicines" ToRole="m_suppliers" />
+    <NavigationProperty Name="m_types" Relationship="Self.FK_m_medicines_m_types" FromRole="m_medicines" ToRole="m_types" />
+  </EntityType>
+  <EntityType Name="m_order_details">
+    <Key>
+      <PropertyRef Name="odid" />
+    </Key>
+    <Property Name="odid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="medicine_id" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="unit_price" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="m_medicines" Relationship="Self.FK__m_order_d__medic__6C190EBB" FromRole="m_order_details" ToRole="m_medicines" />
+    <NavigationProperty Name="m_orders" Relationship="Self.FK__m_order_d__order__1332DBDC" FromRole="m_order_details" ToRole="m_orders" />
+  </EntityType>
+  <EntityType Name="m_orders">
+    <Key>
+      <PropertyRef Name="oid" />
+    </Key>
+    <Property Name="oid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="order_date" Type="DateTime" Precision="0" />
+    <Property Name="ordertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="m_customers" Relationship="Self.FK__m_orders__custom__68487DD7" FromRole="m_orders" ToRole="m_customers" />
+    <NavigationProperty Name="m_order_details" Relationship="Self.FK__m_order_d__order__1332DBDC" FromRole="m_orders" ToRole="m_order_details" />
+  </EntityType>
+  <EntityType Name="m_suppliers">
+    <Key>
+      <PropertyRef Name="m_supid" />
+    </Key>
+    <Property Name="m_supid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contact_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="m_medicines" Relationship="Self.FK_m_medicines_m_suppliers" FromRole="m_suppliers" ToRole="m_medicines" />
+  </EntityType>
+  <EntityType Name="m_types">
+    <Key>
+      <PropertyRef Name="medtypeid" />
+    </Key>
+    <Property Name="medtypeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="m_medicines" Relationship="Self.FK_m_medicines_m_types" FromRole="m_types" ToRole="m_medicines" />
+  </EntityType>
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="RegisterID" />
+    </Key>
+    <Property Name="RegisterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegisterTypeID" Type="Int32" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="CityID" Type="Int32" />
+    <NavigationProperty Name="City" Relationship="Self.FK__Register__CityID__282DF8C2" FromRole="Register" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__Register__Countr__2739D489" FromRole="Register" ToRole="Country" />
+    <NavigationProperty Name="e_staff" Relationship="Self.FK_e_staff_Register" FromRole="Register" ToRole="e_staff" />
+    <NavigationProperty Name="e_students" Relationship="Self.FK_e_students_Register" FromRole="Register" ToRole="e_students" />
+    <NavigationProperty Name="m_customers" Relationship="Self.FK_m_customers_Register" FromRole="Register" ToRole="m_customers" />
+    <NavigationProperty Name="RegisterType" Relationship="Self.FK__Register__Regist__2645B050" FromRole="Register" ToRole="RegisterType" />
+    <NavigationProperty Name="s_Doctor" Relationship="Self.FK_s_Doctor_Register" FromRole="Register" ToRole="s_Doctor" />
+    <NavigationProperty Name="s_Patient" Relationship="Self.FK_s_Patient_Register" FromRole="Register" ToRole="s_Patient" />
+  </EntityType>
+  <EntityType Name="RegisterType">
+    <Key>
+      <PropertyRef Name="RegisterTypeID" />
+    </Key>
+    <Property Name="RegisterTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Registers" Relationship="Self.FK__Register__Regist__2645B050" FromRole="RegisterType" ToRole="Register" />
+  </EntityType>
+  <EntityType Name="s_Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="DoctorID" Type="Int32" Nullable="false" />
+    <Property Name="AppointmentDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AppointmentTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fee" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Statusid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="s_Doctor" Relationship="Self.FK__s_Appoint__Docto__17F790F9" FromRole="s_Appointment" ToRole="s_Doctor" />
+    <NavigationProperty Name="s_Patient" Relationship="Self.FK__s_Appoint__Patie__18EBB532" FromRole="s_Appointment" ToRole="s_Patient" />
+    <NavigationProperty Name="s_Status" Relationship="Self.FK_s_Appointment_s_Status" FromRole="s_Appointment" ToRole="s_Status" />
+    <NavigationProperty Name="s_AppointmentDetail" Relationship="Self.FK_s_AppointmentDetail_s_Appointment" FromRole="s_Appointment" ToRole="s_AppointmentDetail" />
+    <NavigationProperty Name="s_Prescription" Relationship="Self.FK_s_Prescription_s_Appointment" FromRole="s_Appointment" ToRole="s_Prescription" />
+  </EntityType>
+  <EntityType Name="s_AppointmentDetail">
+    <Key>
+      <PropertyRef Name="AppointmentDetailID" />
+    </Key>
+    <Property Name="AppointmentDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppointmentID" Type="Int32" Nullable="false" />
+    <Property Name="Detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="s_Appointment" Relationship="Self.FK_s_AppointmentDetail_s_Appointment" FromRole="s_AppointmentDetail" ToRole="s_Appointment" />
+  </EntityType>
+  <EntityType Name="s_Category">
+    <Key>
+      <PropertyRef Name="CatID" />
+    </Key>
+    <Property Name="CatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="s_Product" Relationship="Self.FK_s_Product_s_Category" FromRole="s_Category" ToRole="s_Product" />
+  </EntityType>
+  <EntityType Name="s_Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="s_Doctor">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Name="DoctorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regid" Type="Int32" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SpecialistID" Type="Int32" />
+    <Property Name="ContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_s_Doctor_Register" FromRole="s_Doctor" ToRole="Register" />
+    <NavigationProperty Name="s_Appointment" Relationship="Self.FK__s_Appoint__Docto__17F790F9" FromRole="s_Doctor" ToRole="s_Appointment" />
+    <NavigationProperty Name="s_LabTest" Relationship="Self.FK__s_LabTest__Docto__4AB81AF0" FromRole="s_Doctor" ToRole="s_LabTest" />
+    <NavigationProperty Name="s_Order" Relationship="Self.FK__s_Order__DoctorI__4CA06362" FromRole="s_Doctor" ToRole="s_Order" />
+    <NavigationProperty Name="s_PatientHistory" Relationship="Self.FK__s_Patient__Docto__236943A5" FromRole="s_Doctor" ToRole="s_PatientHistory" />
+    <NavigationProperty Name="s_Specialist" Relationship="Self.FK_s_Doctor_s_Specialist" FromRole="s_Doctor" ToRole="s_Specialist" />
+    <NavigationProperty Name="s_DoctorSchedule" Relationship="Self.FK_s_DoctorSchedule_s_Doctor" FromRole="s_Doctor" ToRole="s_DoctorSchedule" />
+    <NavigationProperty Name="s_Feedback" Relationship="Self.FK_s_Feedback_s_Doctor" FromRole="s_Doctor" ToRole="s_Feedback" />
+  </EntityType>
+  <EntityType Name="s_DoctorSchedule">
+    <Key>
+      <PropertyRef Name="SchID" />
+    </Key>
+    <Property Name="SchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DoctorID" Type="Int32" Nullable="false" />
+    <Property Name="AvailableDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Precision="7" />
+    <NavigationProperty Name="s_Doctor" Relationship="Self.FK_s_DoctorSchedule_s_Doctor" FromRole="s_DoctorSchedule" ToRole="s_Doctor" />
+  </EntityType>
+  <EntityType Name="s_Feedback">
+    <Key>
+      <PropertyRef Name="FeedbackID" />
+    </Key>
+    <Property Name="FeedbackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="DoctorID" Type="Int32" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rating" Type="Int32" />
+    <NavigationProperty Name="s_Doctor" Relationship="Self.FK_s_Feedback_s_Doctor" FromRole="s_Feedback" ToRole="s_Doctor" />
+    <NavigationProperty Name="s_Patient" Relationship="Self.FK_s_Feedback_s_Patient" FromRole="s_Feedback" ToRole="s_Patient" />
+  </EntityType>
+  <EntityType Name="s_LabTest">
+    <Key>
+      <PropertyRef Name="LabTestID" />
+    </Key>
+    <Property Name="LabTestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TestName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DoctorID" Type="Int32" />
+    <Property Name="PatientID" Type="Int32" />
+    <Property Name="TestDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChemicalsUsed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LabProductsUsed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="s_Doctor" Relationship="Self.FK__s_LabTest__Docto__4AB81AF0" FromRole="s_LabTest" ToRole="s_Doctor" />
+    <NavigationProperty Name="s_LabTestPrescription" Relationship="Self.FK__s_LabTest__LabTe__160F4887" FromRole="s_LabTest" ToRole="s_LabTestPrescription" />
+    <NavigationProperty Name="s_Patient" Relationship="Self.FK__s_LabTest__Patie__4BAC3F29" FromRole="s_LabTest" ToRole="s_Patient" />
+  </EntityType>
+  <EntityType Name="s_LabTestPrescription">
+    <Key>
+      <PropertyRef Name="LabTestPrescriptionID" />
+    </Key>
+    <Property Name="LabTestPrescriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LabTestID" Type="Int32" Nullable="false" />
+    <Property Name="PrescriptionID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="s_LabTest" Relationship="Self.FK__s_LabTest__LabTe__160F4887" FromRole="s_LabTestPrescription" ToRole="s_LabTest" />
+    <NavigationProperty Name="s_Prescription" Relationship="Self.FK__s_LabTest__Presc__17036CC0" FromRole="s_LabTestPrescription" ToRole="s_Prescription" />
+  </EntityType>
+  <EntityType Name="s_Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientID" Type="Int32" />
+    <Property Name="DoctorID" Type="Int32" />
+    <Property Name="OrderDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="s_Doctor" Relationship="Self.FK__s_Order__DoctorI__4CA06362" FromRole="s_Order" ToRole="s_Doctor" />
+    <NavigationProperty Name="s_Patient" Relationship="Self.FK__s_Order__Patient__4D94879B" FromRole="s_Order" ToRole="s_Patient" />
+    <NavigationProperty Name="s_OrderDetail" Relationship="Self.FK__s_OrderDe__Order__19DFD96B" FromRole="s_Order" ToRole="s_OrderDetail" />
+    <NavigationProperty Name="s_Transaction" Relationship="Self.FK__s_Transac__Order__2180FB33" FromRole="s_Order" ToRole="s_Transaction" />
+  </EntityType>
+  <EntityType Name="s_OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="s_Order" Relationship="Self.FK__s_OrderDe__Order__19DFD96B" FromRole="s_OrderDetail" ToRole="s_Order" />
+  </EntityType>
+  <EntityType Name="s_Patient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regid" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_s_Patient_Register" FromRole="s_Patient" ToRole="Register" />
+    <NavigationProperty Name="s_Appointment" Relationship="Self.FK__s_Appoint__Patie__18EBB532" FromRole="s_Patient" ToRole="s_Appointment" />
+    <NavigationProperty Name="s_Feedback" Relationship="Self.FK_s_Feedback_s_Patient" FromRole="s_Patient" ToRole="s_Feedback" />
+    <NavigationProperty Name="s_LabTest" Relationship="Self.FK__s_LabTest__Patie__4BAC3F29" FromRole="s_Patient" ToRole="s_LabTest" />
+    <NavigationProperty Name="s_Order" Relationship="Self.FK__s_Order__Patient__4D94879B" FromRole="s_Patient" ToRole="s_Order" />
+    <NavigationProperty Name="s_PatientHistory" Relationship="Self.FK__s_Patient__Patie__245D67DE" FromRole="s_Patient" ToRole="s_PatientHistory" />
+  </EntityType>
+  <EntityType Name="s_PatientHistory">
+    <Key>
+      <PropertyRef Name="HistoryID" />
+    </Key>
+    <Property Name="HistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="DoctorID" Type="Int32" Nullable="false" />
+    <Property Name="VisitDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VisitTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="s_Doctor" Relationship="Self.FK__s_Patient__Docto__236943A5" FromRole="s_PatientHistory" ToRole="s_Doctor" />
+    <NavigationProperty Name="s_Patient" Relationship="Self.FK__s_Patient__Patie__245D67DE" FromRole="s_PatientHistory" ToRole="s_Patient" />
+  </EntityType>
+  <EntityType Name="s_Prescription">
+    <Key>
+      <PropertyRef Name="PrescriptionID" />
+    </Key>
+    <Property Name="PrescriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppointmentID" Type="Int32" Nullable="false" />
+    <Property Name="MedicineID" Type="Int32" Nullable="false" />
+    <Property Name="Dosage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Duration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="m_medicines" Relationship="Self.FK__s_Prescri__Medic__2645B050" FromRole="s_Prescription" ToRole="m_medicines" />
+    <NavigationProperty Name="s_Appointment" Relationship="Self.FK_s_Prescription_s_Appointment" FromRole="s_Prescription" ToRole="s_Appointment" />
+    <NavigationProperty Name="s_LabTestPrescription" Relationship="Self.FK__s_LabTest__Presc__17036CC0" FromRole="s_Prescription" ToRole="s_LabTestPrescription" />
+  </EntityType>
+  <EntityType Name="s_Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="QuantityInStock" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="s_Category" Relationship="Self.FK_s_Product_s_Category" FromRole="s_Product" ToRole="s_Category" />
+    <NavigationProperty Name="s_Supplier" Relationship="Self.FK_s_Product_s_Supplier" FromRole="s_Product" ToRole="s_Supplier" />
+  </EntityType>
+  <EntityType Name="s_Specialist">
+    <Key>
+      <PropertyRef Name="SpecialistID" />
+    </Key>
+    <Property Name="SpecialistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SpecialistName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="s_Doctor" Relationship="Self.FK_s_Doctor_s_Specialist" FromRole="s_Specialist" ToRole="s_Doctor" />
+  </EntityType>
+  <EntityType Name="s_Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="s_Appointment" Relationship="Self.FK_s_Appointment_s_Status" FromRole="s_Status" ToRole="s_Appointment" />
+  </EntityType>
+  <EntityType Name="s_Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="s_Product" Relationship="Self.FK_s_Product_s_Supplier" FromRole="s_Supplier" ToRole="s_Product" />
+    <NavigationProperty Name="s_Transaction" Relationship="Self.FK__s_Transac__Suppl__22751F6C" FromRole="s_Supplier" ToRole="s_Transaction" />
+  </EntityType>
+  <EntityType Name="s_Transaction">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="PurchasePrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SellingPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="s_Order" Relationship="Self.FK__s_Transac__Order__2180FB33" FromRole="s_Transaction" ToRole="s_Order" />
+    <NavigationProperty Name="s_Supplier" Relationship="Self.FK__s_Transac__Suppl__22751F6C" FromRole="s_Transaction" ToRole="s_Supplier" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__City__CountryID__797309D9">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Register__CityID__282DF8C2">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Register" Type="Self.Register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Register">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Register__Countr__2739D489">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Register" Type="Self.Register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Register">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_e_enrollment_e_class">
+    <End Role="e_class" Type="Self.e_class" Multiplicity="0..1" />
+    <End Role="e_enrollments" Type="Self.e_enrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="e_class">
+        <PropertyRef Name="classid" />
+      </Principal>
+      <Dependent Role="e_enrollments">
+        <PropertyRef Name="classid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_e_enrollment_e_lsp">
+    <End Role="e_lsp" Type="Self.e_lsp" Multiplicity="0..1" />
+    <End Role="e_enrollments" Type="Self.e_enrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="e_lsp">
+        <PropertyRef Name="lspid" />
+      </Principal>
+      <Dependent Role="e_enrollments">
+        <PropertyRef Name="lspid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_e_enrollment_e_students">
+    <End Role="e_students" Type="Self.e_students" Multiplicity="0..1" />
+    <End Role="e_enrollments" Type="Self.e_enrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="e_students">
+        <PropertyRef Name="stdid" />
+      </Principal>
+      <Dependent Role="e_enrollments">
+        <PropertyRef Name="stdid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_e_enrollments_e_staff">
+    <End Role="e_staff" Type="Self.e_staff" Multiplicity="0..1" />
+    <End Role="e_enrollments" Type="Self.e_enrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="e_staff">
+        <PropertyRef Name="proid" />
+      </Principal>
+      <Dependent Role="e_enrollments">
+        <PropertyRef Name="proid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_e_enrollments_e_subject">
+    <End Role="e_subject" Type="Self.e_subject" Multiplicity="0..1" />
+    <End Role="e_enrollments" Type="Self.e_enrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="e_subject">
+        <PropertyRef Name="subid" />
+      </Principal>
+      <Dependent Role="e_enrollments">
+        <PropertyRef Name="subid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__e_lsp__type_id__0B91BA14">
+    <End Role="e_lsp_type" Type="Self.e_lsp_type" Multiplicity="0..1" />
+    <End Role="e_lsp" Type="Self.e_lsp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="e_lsp_type">
+        <PropertyRef Name="lsptype_id" />
+      </Principal>
+      <Dependent Role="e_lsp">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_e_staff_e_staff_type">
+    <End Role="e_staff_type" Type="Self.e_staff_type" Multiplicity="0..1" />
+    <End Role="e_staff" Type="Self.e_staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="e_staff_type">
+        <PropertyRef Name="stype_id" />
+      </Principal>
+      <Dependent Role="e_staff">
+        <PropertyRef Name="stype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_e_staff_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="0..1" />
+    <End Role="e_staff" Type="Self.e_staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="RegisterID" />
+      </Principal>
+      <Dependent Role="e_staff">
+        <PropertyRef Name="regid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_e_students_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="0..1" />
+    <End Role="e_students" Type="Self.e_students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="RegisterID" />
+      </Principal>
+      <Dependent Role="e_students">
+        <PropertyRef Name="regid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_m_medicine_m_categories">
+    <End Role="m_categories" Type="Self.m_categories" Multiplicity="0..1" />
+    <End Role="m_medicines" Type="Self.m_medicines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_categories">
+        <PropertyRef Name="m_catid" />
+      </Principal>
+      <Dependent Role="m_medicines">
+        <PropertyRef Name="catid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__m_orders__custom__68487DD7">
+    <End Role="m_customers" Type="Self.m_customers" Multiplicity="0..1" />
+    <End Role="m_orders" Type="Self.m_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_customers">
+        <PropertyRef Name="cusid" />
+      </Principal>
+      <Dependent Role="m_orders">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_m_customers_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="0..1" />
+    <End Role="m_customers" Type="Self.m_customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="RegisterID" />
+      </Principal>
+      <Dependent Role="m_customers">
+        <PropertyRef Name="regid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__m_order_d__medic__6C190EBB">
+    <End Role="m_medicines" Type="Self.m_medicines" Multiplicity="0..1" />
+    <End Role="m_order_details" Type="Self.m_order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_medicines">
+        <PropertyRef Name="medid" />
+      </Principal>
+      <Dependent Role="m_order_details">
+        <PropertyRef Name="medicine_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Prescri__Medic__2645B050">
+    <End Role="m_medicines" Type="Self.m_medicines" Multiplicity="1" />
+    <End Role="s_Prescription" Type="Self.s_Prescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_medicines">
+        <PropertyRef Name="medid" />
+      </Principal>
+      <Dependent Role="s_Prescription">
+        <PropertyRef Name="MedicineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_m_medicines_m_suppliers">
+    <End Role="m_suppliers" Type="Self.m_suppliers" Multiplicity="0..1" />
+    <End Role="m_medicines" Type="Self.m_medicines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_suppliers">
+        <PropertyRef Name="m_supid" />
+      </Principal>
+      <Dependent Role="m_medicines">
+        <PropertyRef Name="m_supid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_m_medicines_m_types">
+    <End Role="m_types" Type="Self.m_types" Multiplicity="0..1" />
+    <End Role="m_medicines" Type="Self.m_medicines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_types">
+        <PropertyRef Name="medtypeid" />
+      </Principal>
+      <Dependent Role="m_medicines">
+        <PropertyRef Name="medtypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__m_order_d__order__1332DBDC">
+    <End Role="m_orders" Type="Self.m_orders" Multiplicity="0..1" />
+    <End Role="m_order_details" Type="Self.m_order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_orders">
+        <PropertyRef Name="oid" />
+      </Principal>
+      <Dependent Role="m_order_details">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Register__Regist__2645B050">
+    <End Role="RegisterType" Type="Self.RegisterType" Multiplicity="0..1" />
+    <End Role="Register" Type="Self.Register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegisterType">
+        <PropertyRef Name="RegisterTypeID" />
+      </Principal>
+      <Dependent Role="Register">
+        <PropertyRef Name="RegisterTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Doctor_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="0..1" />
+    <End Role="s_Doctor" Type="Self.s_Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="RegisterID" />
+      </Principal>
+      <Dependent Role="s_Doctor">
+        <PropertyRef Name="regid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Patient_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="0..1" />
+    <End Role="s_Patient" Type="Self.s_Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="RegisterID" />
+      </Principal>
+      <Dependent Role="s_Patient">
+        <PropertyRef Name="regid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Appoint__Docto__17F790F9">
+    <End Role="s_Doctor" Type="Self.s_Doctor" Multiplicity="1" />
+    <End Role="s_Appointment" Type="Self.s_Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="s_Appointment">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Appoint__Patie__18EBB532">
+    <End Role="s_Patient" Type="Self.s_Patient" Multiplicity="1" />
+    <End Role="s_Appointment" Type="Self.s_Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="s_Appointment">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Appointment_s_Status">
+    <End Role="s_Status" Type="Self.s_Status" Multiplicity="1" />
+    <End Role="s_Appointment" Type="Self.s_Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="s_Appointment">
+        <PropertyRef Name="Statusid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_AppointmentDetail_s_Appointment">
+    <End Role="s_Appointment" Type="Self.s_Appointment" Multiplicity="1" />
+    <End Role="s_AppointmentDetail" Type="Self.s_AppointmentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Appointment">
+        <PropertyRef Name="AppointmentID" />
+      </Principal>
+      <Dependent Role="s_AppointmentDetail">
+        <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Prescription_s_Appointment">
+    <End Role="s_Appointment" Type="Self.s_Appointment" Multiplicity="1" />
+    <End Role="s_Prescription" Type="Self.s_Prescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Appointment">
+        <PropertyRef Name="AppointmentID" />
+      </Principal>
+      <Dependent Role="s_Prescription">
+        <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Product_s_Category">
+    <End Role="s_Category" Type="Self.s_Category" Multiplicity="0..1" />
+    <End Role="s_Product" Type="Self.s_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Category">
+        <PropertyRef Name="CatID" />
+      </Principal>
+      <Dependent Role="s_Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_LabTest__Docto__4AB81AF0">
+    <End Role="s_Doctor" Type="Self.s_Doctor" Multiplicity="0..1" />
+    <End Role="s_LabTest" Type="Self.s_LabTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="s_LabTest">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Order__DoctorI__4CA06362">
+    <End Role="s_Doctor" Type="Self.s_Doctor" Multiplicity="0..1" />
+    <End Role="s_Order" Type="Self.s_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="s_Order">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Patient__Docto__236943A5">
+    <End Role="s_Doctor" Type="Self.s_Doctor" Multiplicity="1" />
+    <End Role="s_PatientHistory" Type="Self.s_PatientHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="s_PatientHistory">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Doctor_s_Specialist">
+    <End Role="s_Specialist" Type="Self.s_Specialist" Multiplicity="0..1" />
+    <End Role="s_Doctor" Type="Self.s_Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Specialist">
+        <PropertyRef Name="SpecialistID" />
+      </Principal>
+      <Dependent Role="s_Doctor">
+        <PropertyRef Name="SpecialistID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_DoctorSchedule_s_Doctor">
+    <End Role="s_Doctor" Type="Self.s_Doctor" Multiplicity="1" />
+    <End Role="s_DoctorSchedule" Type="Self.s_DoctorSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="s_DoctorSchedule">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Feedback_s_Doctor">
+    <End Role="s_Doctor" Type="Self.s_Doctor" Multiplicity="1" />
+    <End Role="s_Feedback" Type="Self.s_Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="s_Feedback">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Feedback_s_Patient">
+    <End Role="s_Patient" Type="Self.s_Patient" Multiplicity="1" />
+    <End Role="s_Feedback" Type="Self.s_Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="s_Feedback">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_LabTest__LabTe__160F4887">
+    <End Role="s_LabTest" Type="Self.s_LabTest" Multiplicity="1" />
+    <End Role="s_LabTestPrescription" Type="Self.s_LabTestPrescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_LabTest">
+        <PropertyRef Name="LabTestID" />
+      </Principal>
+      <Dependent Role="s_LabTestPrescription">
+        <PropertyRef Name="LabTestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_LabTest__Patie__4BAC3F29">
+    <End Role="s_Patient" Type="Self.s_Patient" Multiplicity="0..1" />
+    <End Role="s_LabTest" Type="Self.s_LabTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="s_LabTest">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_LabTest__Presc__17036CC0">
+    <End Role="s_Prescription" Type="Self.s_Prescription" Multiplicity="1" />
+    <End Role="s_LabTestPrescription" Type="Self.s_LabTestPrescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Prescription">
+        <PropertyRef Name="PrescriptionID" />
+      </Principal>
+      <Dependent Role="s_LabTestPrescription">
+        <PropertyRef Name="PrescriptionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Order__Patient__4D94879B">
+    <End Role="s_Patient" Type="Self.s_Patient" Multiplicity="0..1" />
+    <End Role="s_Order" Type="Self.s_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="s_Order">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_OrderDe__Order__19DFD96B">
+    <End Role="s_Order" Type="Self.s_Order" Multiplicity="0..1" />
+    <End Role="s_OrderDetail" Type="Self.s_OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="s_OrderDetail">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Transac__Order__2180FB33">
+    <End Role="s_Order" Type="Self.s_Order" Multiplicity="0..1" />
+    <End Role="s_Transaction" Type="Self.s_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="s_Transaction">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Patient__Patie__245D67DE">
+    <End Role="s_Patient" Type="Self.s_Patient" Multiplicity="1" />
+    <End Role="s_PatientHistory" Type="Self.s_PatientHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="s_PatientHistory">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_s_Product_s_Supplier">
+    <End Role="s_Supplier" Type="Self.s_Supplier" Multiplicity="0..1" />
+    <End Role="s_Product" Type="Self.s_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="s_Product">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__s_Transac__Suppl__22751F6C">
+    <End Role="s_Supplier" Type="Self.s_Supplier" Multiplicity="0..1" />
+    <End Role="s_Transaction" Type="Self.s_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="s_Transaction">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProvidenceClinicsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="e_class" EntityType="Self.e_class" />
+    <EntitySet Name="e_enrollments" EntityType="Self.e_enrollments" />
+    <EntitySet Name="e_lsp" EntityType="Self.e_lsp" />
+    <EntitySet Name="e_lsp_type" EntityType="Self.e_lsp_type" />
+    <EntitySet Name="e_staff" EntityType="Self.e_staff" />
+    <EntitySet Name="e_staff_type" EntityType="Self.e_staff_type" />
+    <EntitySet Name="e_students" EntityType="Self.e_students" />
+    <EntitySet Name="e_subject" EntityType="Self.e_subject" />
+    <EntitySet Name="m_categories" EntityType="Self.m_categories" />
+    <EntitySet Name="m_customers" EntityType="Self.m_customers" />
+    <EntitySet Name="m_medicines" EntityType="Self.m_medicines" />
+    <EntitySet Name="m_order_details" EntityType="Self.m_order_details" />
+    <EntitySet Name="m_orders" EntityType="Self.m_orders" />
+    <EntitySet Name="m_suppliers" EntityType="Self.m_suppliers" />
+    <EntitySet Name="m_types" EntityType="Self.m_types" />
+    <EntitySet Name="Registers" EntityType="Self.Register" />
+    <EntitySet Name="RegisterTypes" EntityType="Self.RegisterType" />
+    <EntitySet Name="s_Appointment" EntityType="Self.s_Appointment" />
+    <EntitySet Name="s_AppointmentDetail" EntityType="Self.s_AppointmentDetail" />
+    <EntitySet Name="s_Category" EntityType="Self.s_Category" />
+    <EntitySet Name="s_Contact" EntityType="Self.s_Contact" />
+    <EntitySet Name="s_Doctor" EntityType="Self.s_Doctor" />
+    <EntitySet Name="s_DoctorSchedule" EntityType="Self.s_DoctorSchedule" />
+    <EntitySet Name="s_Feedback" EntityType="Self.s_Feedback" />
+    <EntitySet Name="s_LabTest" EntityType="Self.s_LabTest" />
+    <EntitySet Name="s_LabTestPrescription" EntityType="Self.s_LabTestPrescription" />
+    <EntitySet Name="s_Order" EntityType="Self.s_Order" />
+    <EntitySet Name="s_OrderDetail" EntityType="Self.s_OrderDetail" />
+    <EntitySet Name="s_Patient" EntityType="Self.s_Patient" />
+    <EntitySet Name="s_PatientHistory" EntityType="Self.s_PatientHistory" />
+    <EntitySet Name="s_Prescription" EntityType="Self.s_Prescription" />
+    <EntitySet Name="s_Product" EntityType="Self.s_Product" />
+    <EntitySet Name="s_Specialist" EntityType="Self.s_Specialist" />
+    <EntitySet Name="s_Status" EntityType="Self.s_Status" />
+    <EntitySet Name="s_Supplier" EntityType="Self.s_Supplier" />
+    <EntitySet Name="s_Transaction" EntityType="Self.s_Transaction" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK__City__CountryID__797309D9" Association="Self.FK__City__CountryID__797309D9">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Register__CityID__282DF8C2" Association="Self.FK__Register__CityID__282DF8C2">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Register" EntitySet="Registers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Register__Countr__2739D489" Association="Self.FK__Register__Countr__2739D489">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Register" EntitySet="Registers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_e_enrollment_e_class" Association="Self.FK_e_enrollment_e_class">
+      <End Role="e_class" EntitySet="e_class" />
+      <End Role="e_enrollments" EntitySet="e_enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_e_enrollment_e_lsp" Association="Self.FK_e_enrollment_e_lsp">
+      <End Role="e_lsp" EntitySet="e_lsp" />
+      <End Role="e_enrollments" EntitySet="e_enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_e_enrollment_e_students" Association="Self.FK_e_enrollment_e_students">
+      <End Role="e_students" EntitySet="e_students" />
+      <End Role="e_enrollments" EntitySet="e_enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_e_enrollments_e_staff" Association="Self.FK_e_enrollments_e_staff">
+      <End Role="e_staff" EntitySet="e_staff" />
+      <End Role="e_enrollments" EntitySet="e_enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_e_enrollments_e_subject" Association="Self.FK_e_enrollments_e_subject">
+      <End Role="e_subject" EntitySet="e_subject" />
+      <End Role="e_enrollments" EntitySet="e_enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__e_lsp__type_id__0B91BA14" Association="Self.FK__e_lsp__type_id__0B91BA14">
+      <End Role="e_lsp_type" EntitySet="e_lsp_type" />
+      <End Role="e_lsp" EntitySet="e_lsp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_e_staff_e_staff_type" Association="Self.FK_e_staff_e_staff_type">
+      <End Role="e_staff_type" EntitySet="e_staff_type" />
+      <End Role="e_staff" EntitySet="e_staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_e_staff_Register" Association="Self.FK_e_staff_Register">
+      <End Role="Register" EntitySet="Registers" />
+      <End Role="e_staff" EntitySet="e_staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_e_students_Register" Association="Self.FK_e_students_Register">
+      <End Role="Register" EntitySet="Registers" />
+      <End Role="e_students" EntitySet="e_students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_m_medicine_m_categories" Association="Self.FK_m_medicine_m_categories">
+      <End Role="m_categories" EntitySet="m_categories" />
+      <End Role="m_medicines" EntitySet="m_medicines" />
+    </AssociationSet>
+    <AssociationSet Name="FK__m_orders__custom__68487DD7" Association="Self.FK__m_orders__custom__68487DD7">
+      <End Role="m_customers" EntitySet="m_customers" />
+      <End Role="m_orders" EntitySet="m_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_m_customers_Register" Association="Self.FK_m_customers_Register">
+      <End Role="Register" EntitySet="Registers" />
+      <End Role="m_customers" EntitySet="m_customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__m_order_d__medic__6C190EBB" Association="Self.FK__m_order_d__medic__6C190EBB">
+      <End Role="m_medicines" EntitySet="m_medicines" />
+      <End Role="m_order_details" EntitySet="m_order_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Prescri__Medic__2645B050" Association="Self.FK__s_Prescri__Medic__2645B050">
+      <End Role="m_medicines" EntitySet="m_medicines" />
+      <End Role="s_Prescription" EntitySet="s_Prescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_m_medicines_m_suppliers" Association="Self.FK_m_medicines_m_suppliers">
+      <End Role="m_suppliers" EntitySet="m_suppliers" />
+      <End Role="m_medicines" EntitySet="m_medicines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_m_medicines_m_types" Association="Self.FK_m_medicines_m_types">
+      <End Role="m_types" EntitySet="m_types" />
+      <End Role="m_medicines" EntitySet="m_medicines" />
+    </AssociationSet>
+    <AssociationSet Name="FK__m_order_d__order__1332DBDC" Association="Self.FK__m_order_d__order__1332DBDC">
+      <End Role="m_orders" EntitySet="m_orders" />
+      <End Role="m_order_details" EntitySet="m_order_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Register__Regist__2645B050" Association="Self.FK__Register__Regist__2645B050">
+      <End Role="RegisterType" EntitySet="RegisterTypes" />
+      <End Role="Register" EntitySet="Registers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Doctor_Register" Association="Self.FK_s_Doctor_Register">
+      <End Role="Register" EntitySet="Registers" />
+      <End Role="s_Doctor" EntitySet="s_Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Patient_Register" Association="Self.FK_s_Patient_Register">
+      <End Role="Register" EntitySet="Registers" />
+      <End Role="s_Patient" EntitySet="s_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Appoint__Docto__17F790F9" Association="Self.FK__s_Appoint__Docto__17F790F9">
+      <End Role="s_Doctor" EntitySet="s_Doctor" />
+      <End Role="s_Appointment" EntitySet="s_Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Appoint__Patie__18EBB532" Association="Self.FK__s_Appoint__Patie__18EBB532">
+      <End Role="s_Patient" EntitySet="s_Patient" />
+      <End Role="s_Appointment" EntitySet="s_Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Appointment_s_Status" Association="Self.FK_s_Appointment_s_Status">
+      <End Role="s_Status" EntitySet="s_Status" />
+      <End Role="s_Appointment" EntitySet="s_Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_AppointmentDetail_s_Appointment" Association="Self.FK_s_AppointmentDetail_s_Appointment">
+      <End Role="s_Appointment" EntitySet="s_Appointment" />
+      <End Role="s_AppointmentDetail" EntitySet="s_AppointmentDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Prescription_s_Appointment" Association="Self.FK_s_Prescription_s_Appointment">
+      <End Role="s_Appointment" EntitySet="s_Appointment" />
+      <End Role="s_Prescription" EntitySet="s_Prescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Product_s_Category" Association="Self.FK_s_Product_s_Category">
+      <End Role="s_Category" EntitySet="s_Category" />
+      <End Role="s_Product" EntitySet="s_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_LabTest__Docto__4AB81AF0" Association="Self.FK__s_LabTest__Docto__4AB81AF0">
+      <End Role="s_Doctor" EntitySet="s_Doctor" />
+      <End Role="s_LabTest" EntitySet="s_LabTest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Order__DoctorI__4CA06362" Association="Self.FK__s_Order__DoctorI__4CA06362">
+      <End Role="s_Doctor" EntitySet="s_Doctor" />
+      <End Role="s_Order" EntitySet="s_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Patient__Docto__236943A5" Association="Self.FK__s_Patient__Docto__236943A5">
+      <End Role="s_Doctor" EntitySet="s_Doctor" />
+      <End Role="s_PatientHistory" EntitySet="s_PatientHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Doctor_s_Specialist" Association="Self.FK_s_Doctor_s_Specialist">
+      <End Role="s_Specialist" EntitySet="s_Specialist" />
+      <End Role="s_Doctor" EntitySet="s_Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_DoctorSchedule_s_Doctor" Association="Self.FK_s_DoctorSchedule_s_Doctor">
+      <End Role="s_Doctor" EntitySet="s_Doctor" />
+      <End Role="s_DoctorSchedule" EntitySet="s_DoctorSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Feedback_s_Doctor" Association="Self.FK_s_Feedback_s_Doctor">
+      <End Role="s_Doctor" EntitySet="s_Doctor" />
+      <End Role="s_Feedback" EntitySet="s_Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Feedback_s_Patient" Association="Self.FK_s_Feedback_s_Patient">
+      <End Role="s_Patient" EntitySet="s_Patient" />
+      <End Role="s_Feedback" EntitySet="s_Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_LabTest__LabTe__160F4887" Association="Self.FK__s_LabTest__LabTe__160F4887">
+      <End Role="s_LabTest" EntitySet="s_LabTest" />
+      <End Role="s_LabTestPrescription" EntitySet="s_LabTestPrescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_LabTest__Patie__4BAC3F29" Association="Self.FK__s_LabTest__Patie__4BAC3F29">
+      <End Role="s_Patient" EntitySet="s_Patient" />
+      <End Role="s_LabTest" EntitySet="s_LabTest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_LabTest__Presc__17036CC0" Association="Self.FK__s_LabTest__Presc__17036CC0">
+      <End Role="s_Prescription" EntitySet="s_Prescription" />
+      <End Role="s_LabTestPrescription" EntitySet="s_LabTestPrescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Order__Patient__4D94879B" Association="Self.FK__s_Order__Patient__4D94879B">
+      <End Role="s_Patient" EntitySet="s_Patient" />
+      <End Role="s_Order" EntitySet="s_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_OrderDe__Order__19DFD96B" Association="Self.FK__s_OrderDe__Order__19DFD96B">
+      <End Role="s_Order" EntitySet="s_Order" />
+      <End Role="s_OrderDetail" EntitySet="s_OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Transac__Order__2180FB33" Association="Self.FK__s_Transac__Order__2180FB33">
+      <End Role="s_Order" EntitySet="s_Order" />
+      <End Role="s_Transaction" EntitySet="s_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Patient__Patie__245D67DE" Association="Self.FK__s_Patient__Patie__245D67DE">
+      <End Role="s_Patient" EntitySet="s_Patient" />
+      <End Role="s_PatientHistory" EntitySet="s_PatientHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_s_Product_s_Supplier" Association="Self.FK_s_Product_s_Supplier">
+      <End Role="s_Supplier" EntitySet="s_Supplier" />
+      <End Role="s_Product" EntitySet="s_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__s_Transac__Suppl__22751F6C" Association="Self.FK__s_Transac__Suppl__22751F6C">
+      <End Role="s_Supplier" EntitySet="s_Supplier" />
+      <End Role="s_Transaction" EntitySet="s_Transaction" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

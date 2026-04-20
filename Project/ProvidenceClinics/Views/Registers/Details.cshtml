@@ -1,0 +1,90 @@
+﻿@model ProvidenceClinics.Models.Register
+
+@{
+    ViewBag.Title = "Details Registeration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Detail Registeration </h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Registers/Index">Registers</a></li>
+                        <li class="breadcrumb-item active">Detail Registeration </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Username
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Username)
+                                </dd>
+
+                                <dt>
+                                    Image
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.image)
+                                </dd>
+
+                                <dt>
+                                    Email
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+
+
+                                <dt>
+                                    City
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.City.CityName)
+                                </dd>
+
+                                <dt>
+                                    Country
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Country.CountryName)
+                                </dd>
+
+                                <dt>
+                                    Registeration Type
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.RegisterType.TypeName)
+                                </dd>
+
+                            </dl>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

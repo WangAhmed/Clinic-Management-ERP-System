@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.s_Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Category</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/s_Category/Create">Dashboard</a></li>
+                        <li class="breadcrumb-item active">E-Commerce</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                   
+                    <a href="/s_Category/Create" class="btn btn-primary">Add S Category <i class="fas fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Scientific Category
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CategoryName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description)
+                                            </td>
+                                            <td>
+                                                <button> @Html.ActionLink("Edit", "Edit", new { id = item.CatID }) </button> |
+                                                <button> @Html.ActionLink("Delete", "Delete", new { id = item.CatID })</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+</div>

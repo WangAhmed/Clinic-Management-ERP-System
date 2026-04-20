@@ -1,0 +1,87 @@
+﻿@model ProvidenceClinics.Models.e_staff
+
+@{
+    ViewBag.Title = "Edit Staff";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Add Staff</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\e_staff\Index">Staff</a></li>
+                        <li class="breadcrumb-item active">Add staff</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.proid)
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> RegID </label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("regid", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.regid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Name </label>
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Image </label>
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Staff Type </label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("stype_id", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.stype_id, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12"> Qualification </label>
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.qualification, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.qualification, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-8">
+                                        <input type="submit" value="Save" class="btn btn-success" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

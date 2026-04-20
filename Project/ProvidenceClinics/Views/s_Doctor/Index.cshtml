@@ -1,0 +1,99 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.s_Doctor>
+
+@{
+    ViewBag.Title = "Index Doctor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title"></h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Appointment</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                    <a href="/s_Doctor/Create" class="btn btn-primary">Add New Doctor <i class="fas fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            RegID
+                                        </th>
+                                        <th>
+                                            Image
+                                        </th>
+                                        <th>
+                                            FirstName
+                                        </th>
+                                        <th>
+                                            LastName
+                                        </th>
+                                        <th>
+                                            Contact
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
+                                        <th>
+                                            Specialist
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Register.RegisterID)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.image)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.FirstName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.LastName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ContactNumber)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Email)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.s_Specialist.SpecialistName)
+                                            </td>
+                                            <td>
+                                                <button>@Html.ActionLink("Edit", "Edit", new { id = item.DoctorID }) </button> |
+                                                <button>@Html.ActionLink("Details", "Details", new { id = item.DoctorID })</button> |
+                                                <button>@Html.ActionLink("Delete", "Delete", new { id = item.DoctorID })</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+</div>

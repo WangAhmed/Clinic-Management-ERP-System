@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Appointment.Models.s_LabTest>
+
+@{
+    ViewBag.Title = "Index";
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}
+
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Lab Tests</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">Lab Tests</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                @Html.Partial("_DoctorSidebar")
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="content container-fluid">
+                    <div class="page-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="page-title">Lab Tests</h3>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Doctor")">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">Lab Tests</li>
+                                </ul>
+                            </div>
+                            <div class="col-auto text-right float-right ml-auto">
+                                <a href="@Url.Action("Create", "s_LabTest")" class="btn btn-outline-primary mr-2"><i class="fas fa-plus"></i> Add Lab Test</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card card-table">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-center mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Test Name</th>
+                                                    <th>Patient Name</th>
+                                                    <th>Test Date</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>@item.TestName</td>
+                                                        <td>@item.s_Patient.FirstName</td>
+                                                        <td>@item.TestDate</td>
+                                                        <td>
+                                                            <a href="@Url.Action("Edit", "s_LabTest", new { id = item.LabTestID })" class="btn btn-sm btn-primary">Edit</a>
+                                                            <a href="@Url.Action("Details", "s_LabTest", new { id = item.LabTestID })" class="btn btn-sm btn-info">Details</a>
+                                                            <a href="@Url.Action("Delete", "s_LabTest", new { id = item.LabTestID })" class="btn btn-sm btn-danger">Delete</a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->

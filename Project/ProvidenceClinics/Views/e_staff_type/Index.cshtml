@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.e_staff_type>
+
+@{
+    ViewBag.Title = "Index Staff Type";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Staff Type</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Education</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                    <a href="\e_lsp_type\Create" class="btn btn-primary">
+                        Add New Type
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Staff Type
+                                        </th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                   @foreach (var item in Model)
+                                    {
+                                      <tr>
+                                         <td>
+                                             @Html.DisplayFor(modelItem => item.type)
+                                         </td>
+                                         <td>
+                                             <button> @Html.ActionLink("Edit", "Edit", new { id = item.stype_id })</button> |
+                                             <button> @Html.ActionLink("Delete", "Delete", new { id = item.stype_id })</button>
+                                         </td>
+                                       </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

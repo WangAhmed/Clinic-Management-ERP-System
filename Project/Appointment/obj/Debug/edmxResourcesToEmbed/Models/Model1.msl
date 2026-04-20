@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProvidenceClinicsModelStoreContainer" CdmEntityContainer="ProvidenceClinicsEntities">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_class">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.e_class">
+        <MappingFragment StoreEntitySet="e_class">
+          <ScalarProperty Name="classid" ColumnName="classid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_enrollments">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.e_enrollments">
+        <MappingFragment StoreEntitySet="e_enrollments">
+          <ScalarProperty Name="enid" ColumnName="enid" />
+          <ScalarProperty Name="regid" ColumnName="regid" />
+          <ScalarProperty Name="stdid" ColumnName="stdid" />
+          <ScalarProperty Name="classid" ColumnName="classid" />
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="lspid" ColumnName="lspid" />
+          <ScalarProperty Name="proid" ColumnName="proid" />
+          <ScalarProperty Name="enrollment_date" ColumnName="enrollment_date" />
+          <ScalarProperty Name="fee" ColumnName="fee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_lsp">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.e_lsp">
+        <MappingFragment StoreEntitySet="e_lsp">
+          <ScalarProperty Name="lspid" ColumnName="lspid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_lsp_type">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.e_lsp_type">
+        <MappingFragment StoreEntitySet="e_lsp_type">
+          <ScalarProperty Name="lsptype_id" ColumnName="lsptype_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_staff">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.e_staff">
+        <MappingFragment StoreEntitySet="e_staff">
+          <ScalarProperty Name="proid" ColumnName="proid" />
+          <ScalarProperty Name="regid" ColumnName="regid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="stype_id" ColumnName="stype_id" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_staff_type">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.e_staff_type">
+        <MappingFragment StoreEntitySet="e_staff_type">
+          <ScalarProperty Name="stype_id" ColumnName="stype_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_students">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.e_students">
+        <MappingFragment StoreEntitySet="e_students">
+          <ScalarProperty Name="stdid" ColumnName="stdid" />
+          <ScalarProperty Name="regid" ColumnName="regid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="f_name" ColumnName="f_name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_subject">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.e_subject">
+        <MappingFragment StoreEntitySet="e_subject">
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_categories">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.m_categories">
+        <MappingFragment StoreEntitySet="m_categories">
+          <ScalarProperty Name="m_catid" ColumnName="m_catid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_customers">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.m_customers">
+        <MappingFragment StoreEntitySet="m_customers">
+          <ScalarProperty Name="cusid" ColumnName="cusid" />
+          <ScalarProperty Name="regid" ColumnName="regid" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_medicines">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.m_medicines">
+        <MappingFragment StoreEntitySet="m_medicines">
+          <ScalarProperty Name="medid" ColumnName="medid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="medtypeid" ColumnName="medtypeid" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="m_supid" ColumnName="m_supid" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity_in_stock" ColumnName="quantity_in_stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_order_details">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.m_order_details">
+        <MappingFragment StoreEntitySet="m_order_details">
+          <ScalarProperty Name="odid" ColumnName="odid" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="medicine_id" ColumnName="medicine_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_orders">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.m_orders">
+        <MappingFragment StoreEntitySet="m_orders">
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="ordertype" ColumnName="ordertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_suppliers">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.m_suppliers">
+        <MappingFragment StoreEntitySet="m_suppliers">
+          <ScalarProperty Name="m_supid" ColumnName="m_supid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_types">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.m_types">
+        <MappingFragment StoreEntitySet="m_types">
+          <ScalarProperty Name="medtypeid" ColumnName="medtypeid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registers">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.Register">
+        <MappingFragment StoreEntitySet="Register">
+          <ScalarProperty Name="RegisterID" ColumnName="RegisterID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="RegisterTypeID" ColumnName="RegisterTypeID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegisterTypes">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.RegisterType">
+        <MappingFragment StoreEntitySet="RegisterType">
+          <ScalarProperty Name="RegisterTypeID" ColumnName="RegisterTypeID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Appointment">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Appointment">
+        <MappingFragment StoreEntitySet="s_Appointment">
+          <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="AppointmentTime" ColumnName="AppointmentTime" />
+          <ScalarProperty Name="fee" ColumnName="fee" />
+          <ScalarProperty Name="Statusid" ColumnName="Statusid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_AppointmentDetail">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_AppointmentDetail">
+        <MappingFragment StoreEntitySet="s_AppointmentDetail">
+          <ScalarProperty Name="AppointmentDetailID" ColumnName="AppointmentDetailID" />
+          <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Category">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Category">
+        <MappingFragment StoreEntitySet="s_Category">
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Contact">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Contact">
+        <MappingFragment StoreEntitySet="s_Contact">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Doctor">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Doctor">
+        <MappingFragment StoreEntitySet="s_Doctor">
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="regid" ColumnName="regid" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SpecialistID" ColumnName="SpecialistID" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_DoctorSchedule">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_DoctorSchedule">
+        <MappingFragment StoreEntitySet="s_DoctorSchedule">
+          <ScalarProperty Name="SchID" ColumnName="SchID" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="AvailableDate" ColumnName="AvailableDate" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Feedback">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Feedback">
+        <MappingFragment StoreEntitySet="s_Feedback">
+          <ScalarProperty Name="FeedbackID" ColumnName="FeedbackID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_LabTest">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_LabTest">
+        <MappingFragment StoreEntitySet="s_LabTest">
+          <ScalarProperty Name="LabTestID" ColumnName="LabTestID" />
+          <ScalarProperty Name="TestName" ColumnName="TestName" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="TestDate" ColumnName="TestDate" />
+          <ScalarProperty Name="ChemicalsUsed" ColumnName="ChemicalsUsed" />
+          <ScalarProperty Name="LabProductsUsed" ColumnName="LabProductsUsed" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_LabTestPrescription">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_LabTestPrescription">
+        <MappingFragment StoreEntitySet="s_LabTestPrescription">
+          <ScalarProperty Name="LabTestPrescriptionID" ColumnName="LabTestPrescriptionID" />
+          <ScalarProperty Name="LabTestID" ColumnName="LabTestID" />
+          <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Order">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Order">
+        <MappingFragment StoreEntitySet="s_Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_OrderDetail">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_OrderDetail">
+        <MappingFragment StoreEntitySet="s_OrderDetail">
+          <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Patient">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Patient">
+        <MappingFragment StoreEntitySet="s_Patient">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="regid" ColumnName="regid" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_PatientHistory">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_PatientHistory">
+        <MappingFragment StoreEntitySet="s_PatientHistory">
+          <ScalarProperty Name="HistoryID" ColumnName="HistoryID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+          <ScalarProperty Name="VisitTime" ColumnName="VisitTime" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Prescription">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Prescription">
+        <MappingFragment StoreEntitySet="s_Prescription">
+          <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
+          <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+          <ScalarProperty Name="MedicineID" ColumnName="MedicineID" />
+          <ScalarProperty Name="Dosage" ColumnName="Dosage" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Product">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Product">
+        <MappingFragment StoreEntitySet="s_Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="QuantityInStock" ColumnName="QuantityInStock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Specialist">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Specialist">
+        <MappingFragment StoreEntitySet="s_Specialist">
+          <ScalarProperty Name="SpecialistID" ColumnName="SpecialistID" />
+          <ScalarProperty Name="SpecialistName" ColumnName="SpecialistName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Status">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Status">
+        <MappingFragment StoreEntitySet="s_Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Supplier">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Supplier">
+        <MappingFragment StoreEntitySet="s_Supplier">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_Transaction">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.s_Transaction">
+        <MappingFragment StoreEntitySet="s_Transaction">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ProvidenceClinicsModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

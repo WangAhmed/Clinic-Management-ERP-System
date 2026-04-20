@@ -1,0 +1,88 @@
+﻿@model ProvidenceClinics.Models.s_OrderDetail
+
+@{
+    ViewBag.Title = "Delete S Order Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Delete S Order Delete</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\s_OrderDetail\Index">S Order Details</a></li>
+                        <li class="breadcrumb-item active">Delete S Order Delete</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            <h3>Are you sure you want to delete this?</h3>
+                            <div>
+                                <hr />
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                       Product
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.ProductID)
+                                    </dd>
+
+                                    <dt>
+                                        Quantity
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Quantity)
+                                    </dd>
+
+                                    <dt>
+                                        Unit Price
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.UnitPrice)
+                                    </dd>
+
+                                    <dt>
+                                        Status
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.s_Order.Status)
+                                    </dd>
+
+                                </dl>
+
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Delete" class="btn btn-success" /> |
+                                        @Html.ActionLink("Cancel", "Index")
+                                    </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+
+</div>
+

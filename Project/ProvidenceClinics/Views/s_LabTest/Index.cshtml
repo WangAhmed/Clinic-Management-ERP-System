@@ -1,0 +1,111 @@
+﻿@model IEnumerable<ProvidenceClinics.Models.s_LabTest>
+
+@{
+    ViewBag.Title = "Index LabTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title"></h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Appointment</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right ml-auto">
+                    <a href="\s_LabTest\Create" class="btn btn-primary">Add New LabTest <i class="fas fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.TestName)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.TestDate)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ChemicalsUsed)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.LabProductsUsed)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Cost)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Price)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.s_Doctor.image)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.s_Patient.FirstName)
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TestName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TestDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ChemicalsUsed)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.LabProductsUsed)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Cost)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Price)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.s_Doctor.image)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.s_Patient.FirstName)
+                                            </td>
+                                            <td>
+                                                <button>@Html.ActionLink("Edit", "Edit", new { id = item.LabTestID }) </button> |
+                                                <button>@Html.ActionLink("Details", "Details", new { id = item.LabTestID }) </button> |
+                                                <button>@Html.ActionLink("Delete", "Delete", new { id = item.LabTestID }) </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+</div>
+
+
+
+
+
+

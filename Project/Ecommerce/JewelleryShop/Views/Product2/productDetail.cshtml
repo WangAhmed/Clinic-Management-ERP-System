@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "productDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Breadcrumbs Area Start -->
+<div class="breadcrumbs-area2 section-padding-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>PRODUCT DTAILS</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumbs Area End -->
+<!-- Product Simple Area Start -->
+<div class="product-simple-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-7">
+                <div class="single-product-image-inner">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="one">
+                            <a class="venobox" href="@ViewBag.proddetail.image" data-gall="gallery" title="">
+                                <img src="@ViewBag.proddetail.image" alt="">
+                            </a>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="two">
+                            <a class="venobox" href="@ViewBag.proddetail.image" data-gall="gallery" title="">
+                                <img src="@ViewBag.proddetail.image" alt="">
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <!-- Nav tabs -->
+                    <ul class="product-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#one" aria-controls="one" role="tab" data-toggle="tab"><img src="img/single-product/1.png" alt=""></a></li>
+                        <li role="presentation"><a href="#two" aria-controls="two" role="tab" data-toggle="tab"><img src="img/single-product/2.png" alt=""></a></li>
+                        <li role="presentation"><a href="#three" aria-controls="three" role="tab" data-toggle="tab"><img src="img/single-product/3.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-offset-1 col-md-5 col-sm-5">
+                <div class="single-product-details">
+                    <div class="list-pro-rating">
+                        <i class="fa fa-star icolor"></i>
+                        <i class="fa fa-star icolor"></i>
+                        <i class="fa fa-star icolor"></i>
+                        <i class="fa fa-star icolor"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h2>@ViewBag.proddetail.ProductName</h2>
+                    <h4>@ViewBag.proddetail.UnitsInStock</h4>
+                    <p>@ViewBag.proddetail.Description</p>
+                    <div class="single-product-price">
+                        <h2>@ViewBag.proddetail.UnitPrice</h2>
+                    </div>
+                                        
+                    <div class="product-attributes clearfix">
+                        <span class="pull-left" id="quantity-wanted-p">
+                            <span class="dec qtybutton">-</span>
+                            <input type="text" value="1" class="cart-plus-minus-box">
+                            <span class="inc qtybutton">+</span>
+                        </span>
+                        <span>
+                            <a class="cart-btn" href="cart.html">
+                                <i class="flaticon-bag"></i>
+                                <span>Add to Cart</span>
+                            </a>
+                        </span>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- Product Simple Area End -->

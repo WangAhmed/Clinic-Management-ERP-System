@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout 2.cshtml";
+}
+
+<form class="from-inline" action="\Product2\Index">
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+    <div class="shop-right-area">
+        <div class="shop-tab-list">
+            <div class="shop-left-tab">
+                <div class="shop-tab-pill pull-left">
+                    <ul>
+                        <li class="active" id="left"><a data-toggle="pill" href="#home"><i class="fa fa-th"></i><span></span></a></li>
+                        <li><a data-toggle="pill" href="#menu1"><i class="fa fa-th-list"></i><span></span></a></li>
+                    </ul>
+                </div>
+
+
+                <div class="shop-tab-pill pull-right">
+                    <ul>
+
+
+                        <li class="product-size-deatils">
+                            <div class="show-label">
+                                <label>Show : </label>
+
+                                <select>
+                                    <option>@ViewBag.page</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="shop-tab-pill pull-right">
+                <div class="shop-pagination">
+                    <ul>
+                        <li><a href="\Product2\Index?page=@ViewBag.previouspage"><i class="fa fa-caret-left"></i></a></li>
+                        @for (int i = 1; i <= @ViewBag.noofpages; i++)
+                        {
+                            <li><a href="\Product2\Index?page=@i">@i</a></li>
+                        }
+
+                        <li><a href="\Product2\Index?page=@ViewBag.nextpage"><i class="fa fa-caret-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group selectpicker-wrapper">
+            <input type="text" name="pname" />
+        </div>
+        <div class="form-group selectpicker-wrapper" style="color:darkgreen">
+            <input type="submit" value="Submit" />
+        </div>
+        <div class="tab-content">
+            <div class="row tab-pane fade in active" id="home">
+                <div class="shop-single-product-area" name="cat" value="%">
+
+                    @foreach (var p in ViewBag.ProdReclist)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-product">
+
+                                <img src="@p.image" alt="">
+
+                                <div class="single-product-overlay sale">
+                                    <h3>sale</h3>
+                                </div>
+                                <div class="single-product-content">
+                                    <div class="left-content pull-left">
+                                        <a href="\Product2\productDetail?pid=@p.ProductID"><h2>@p.ProductName</h2></a>
+                                        <span class="new-price">@p.UnitPrice</span>
+                                    </div>
+                                    <div class="right-content pull-right">
+                                        <a href="\Product2\AddToCart?pid=@p.ProductID"><i class="flaticon-bag"></i></a>
+                                    </div>
+                                    <div class="right-content pull-right">
+                                        <a href="\Product2\EditProduct?pid=@p.ProductID"><i class="fa-edit"></i></a>
+                                    </div>
+                                    <div class="right-content pull-right">
+                                        <a href="\Product2\DeleteProduct?pid=@p.ProductID"><i class="fa-remove"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <div class="row">
+                    @foreach (var p in ViewBag.ProdReclist)
+                    {
+                        <div class="col-md-12">
+                            <div class="shop-list-single">
+                                <div class="shop-list-left">
+                                    <img src="@p.image" alt="" />
+                                </div>
+                                <div class="shop-list-right">
+                                    <div class="left-content">
+                                        <a href="\Product2\productDetail?pid=@p.ProductID"><h2>@p.ProductName</h2></a>
+                                        <span class="new-price">@p.UnitPrice</span>
+                                    </div>
+                                    <div class="list-pro-rating">
+                                        <i class="fa fa-star icolor"></i>
+                                        <i class="fa fa-star icolor"></i>
+                                        <i class="fa fa-star icolor"></i>
+                                        <i class="fa fa-star icolor"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="product-desc">
+
+                                        @p.Description
+                                    </div>
+                                    <div class="right-content pull-right">
+                                        <a href="\Product2\AddToCart?pid=@p.ProductID"><i class="flaticon-bag"></i></a>
+                                    </div>
+                                    <div class="right-content pull-right">
+                                        <a href="\Product2\EditProduct?pid=@p.ProductID"><i class="fa-edit"></i></a>
+                                    </div>
+                                    <div class="right-content pull-right">
+                                        <a href="\Product2\DeleteProduct?pid=@p.ProductID"><i class="fa-remove"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="shop-tab-list no-margin">
+            <div class="shop-left-tab">
+                <div class="shop-tab-pill pull-left">
+                    <ul>
+                        <li class="active first-margin"><a data-toggle="pill" href="#home"><i class="fa fa-th"></i><span></span></a></li>
+                        <li><a data-toggle="pill" href="#menu1"><i class="fa fa-th-list"></i><span></span></a></li>
+                    </ul>
+                </div>
+                <div class="shop-tab-pill pull-right">
+                    <ul>
+
+                        <li class="product-size-deatils">
+                            <div class="show-label">
+                                <label>Show : </label>
+
+                                <select>
+                                    <option>@ViewBag.page</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="shop-tab-pill pull-right">
+                <div class="shop-pagination">
+                    <ul>
+                        <li><a href="\Product2\Index?page=@ViewBag.previouspage"><i class="fa fa-caret-left"></i></a></li>
+                        @for (int i = 1; i <= @ViewBag.noofpages; i++)
+                        {
+                            <li><a href="\Product2\Index?page=@i">@i</a></li>
+                        }
+
+                        <li><a href="\Product2\Index?page=@ViewBag.nextpage"><i class="fa fa-caret-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

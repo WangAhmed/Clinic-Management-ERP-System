@@ -1,0 +1,85 @@
+﻿@model Appointment.Models.s_Doctor
+
+@{
+    ViewBag.Title = "Doctor Details";
+    // Debugging: Log or output the current user type
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<!-- Page Content -->
+<div class="content justify-content-center">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div>
+                        <h4>@Model.FirstName @Model.LastName</h4>
+                        <hr />
+
+                        <div class="doctor-details">
+                            <div class="doctor-image">
+
+                                <img src="~/@Model.image" alt="Doctor Image" class="img-fluid" />
+
+                            </div>
+
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.FirstName)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.FirstName)
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.LastName)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.LastName)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.ContactNumber)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.ContactNumber)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.s_Specialist.SpecialistName)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.s_Specialist.SpecialistName)
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->

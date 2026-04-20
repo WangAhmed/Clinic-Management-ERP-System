@@ -1,0 +1,83 @@
+﻿@model Appointment.Models.s_Prescription
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Prescription</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">Edit Prescription</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                @Html.Partial("_DoctorSidebar")
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="content container-fluid">
+                    <div class="page-header">
+                        <h3 class="page-title">Edit Prescription</h3>
+                    </div>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.HiddenFor(model => model.PrescriptionID)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AppointmentID, "Appointment", htmlAttributes: new { @class = "control-label" })
+                            @Html.DropDownList("AppointmentID", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.AppointmentID, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.MedicineID, "Medicine", htmlAttributes: new { @class = "control-label" })
+                            @Html.DropDownList("MedicineID", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.MedicineID, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Dosage, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Dosage, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Dosage, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Duration, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Duration, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Duration, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Notes, new { @class = "form-control", rows = 4 })
+                            @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                            <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /Page Content -->

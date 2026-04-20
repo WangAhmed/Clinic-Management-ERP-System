@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NorthwindModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__EFMigrationsHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoleClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConcurrencyStamp" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NormalizedUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ConcurrencyStamp" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LockoutEnd" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="NormalizedEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="AspNetUsers2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NormalizedUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AccessFailedCount" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ConcurrencyStamp" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EmailConfirmed" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LockoutEnabled" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LockoutEnd" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NormalizedEmail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumberConfirmed" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TwoFactorEnabled" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserToken">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginProvider" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CartLine">
+    <Key>
+      <PropertyRef Name="CartLineID" />
+    </Key>
+    <Property Name="CartLineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int64" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CITY">
+    <Key>
+      <PropertyRef Name="CITY_ID" />
+    </Key>
+    <Property Name="CITY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CITY_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY_ID" Type="Int32" />
+    <NavigationProperty Name="COUNTRY" Relationship="Self.FK_CITY_COUNTRY" FromRole="CITY" ToRole="COUNTRY" />
+    <NavigationProperty Name="CUSTOMERs" Relationship="Self.FK_CUSTOMER_CITY" FromRole="CITY" ToRole="CUSTOMER" />
+  </EntityType>
+  <EntityType Name="COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRY_ID" />
+    </Key>
+    <Property Name="COUNTRY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COUNTRY_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CITies" Relationship="Self.FK_CITY_COUNTRY" FromRole="COUNTRY" ToRole="CITY" />
+    <NavigationProperty Name="CUSTOMERs" Relationship="Self.FK_CUSTOMER_COUNTRY" FromRole="COUNTRY" ToRole="CUSTOMER" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="CUSTOMER_ID" />
+    </Key>
+    <Property Name="CUSTOMER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY_ID" Type="Int32" />
+    <Property Name="CITY_ID" Type="Int32" />
+    <Property Name="PIN_CODE" Type="Int32" />
+    <Property Name="KEYWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CITY" Relationship="Self.FK_CUSTOMER_CITY" FromRole="CUSTOMER" ToRole="CITY" />
+    <NavigationProperty Name="COUNTRY" Relationship="Self.FK_CUSTOMER_COUNTRY" FromRole="CUSTOMER" ToRole="COUNTRY" />
+    <NavigationProperty Name="LOGINs" Relationship="Self.FK_LOGIN_CUSTOMER" FromRole="CUSTOMER" ToRole="LOGIN" />
+  </EntityType>
+  <EntityType Name="CustomerDemographic">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CustomerDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customers" Relationship="Self.CustomerCustomerDemo" FromRole="CustomerDemographics" ToRole="Customers" />
+  </EntityType>
+  <EntityType Name="Customer1">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ContactTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders2" Relationship="Self.FK_Orders_Customers" FromRole="Customers" ToRole="Orders2" />
+    <NavigationProperty Name="CustomerDemographics" Relationship="Self.CustomerCustomerDemo" FromRole="Customers" ToRole="CustomerDemographics" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TitleOfCourtesy" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="DateTime" Precision="3" />
+    <Property Name="HireDate" Type="DateTime" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="HomePhone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="Extension" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReportsTo" Type="Int32" />
+    <Property Name="PhotoPath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employees1" Relationship="Self.FK_Employees_Employees" FromRole="Employees" ToRole="Employees1" />
+    <NavigationProperty Name="Employee1" Relationship="Self.FK_Employees_Employees" FromRole="Employees1" ToRole="Employees" />
+    <NavigationProperty Name="Orders2" Relationship="Self.FK_Orders_Employees" FromRole="Employees" ToRole="Orders2" />
+    <NavigationProperty Name="Territories" Relationship="Self.EmployeeTerritories" FromRole="Employees" ToRole="Territories" />
+  </EntityType>
+  <EntityType Name="LOGIN">
+    <Key>
+      <PropertyRef Name="LOGIN_ID" />
+    </Key>
+    <Property Name="LOGIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CUSTOMER_ID" Type="Int32" />
+    <Property Name="MEM_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_LOGIN_CUSTOMER" FromRole="LOGIN" ToRole="CUSTOMER" />
+  </EntityType>
+  <EntityType Name="Order_Detail">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int16" Nullable="false" />
+    <Property Name="Discount" Type="Single" Nullable="false" />
+    <NavigationProperty Name="Orders2" Relationship="Self.FK_Order_Details_Orders" FromRole="Order_Details" ToRole="Orders2" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Line1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Line2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Line3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiftWrap" Type="Boolean" Nullable="false" />
+    <Property Name="Shipped" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders2">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="RequiredDate" Type="DateTime" Precision="3" />
+    <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+    <Property Name="ShipVia" Type="Int32" />
+    <Property Name="Freight" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ShipName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="ShipAddress" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="ShipCity" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ShipRegion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ShipPostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ShipCountry" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Orders_Customers" FromRole="Orders2" ToRole="Customers" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Orders_Employees" FromRole="Orders2" ToRole="Employees" />
+    <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Orders" FromRole="Orders2" ToRole="Order_Details" />
+    <NavigationProperty Name="Shipper" Relationship="Self.FK_Orders_Shippers" FromRole="Orders2" ToRole="Shippers" />
+  </EntityType>
+  <EntityType Name="Productsbkp">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="QuantityPerUnit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="UnitsInStock" Type="Int16" />
+    <Property Name="UnitsOnOrder" Type="Int16" />
+    <Property Name="ReorderLevel" Type="Int16" />
+    <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LOC_ID" Type="Int32" />
+    <Property Name="SH_ID" Type="Int32" />
+    <Property Name="ROW_NO" Type="Int32" />
+    <Property Name="COL_NO" Type="Int32" />
+    <Property Name="dbimage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ImageMimeType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="tr_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tr_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="Int32" Nullable="false" />
+    <Property Name="RegionDescription" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Territories" Relationship="Self.FK_Territories_Region" FromRole="Region" ToRole="Territories" />
+  </EntityType>
+  <EntityType Name="SCartLine">
+    <Key>
+      <PropertyRef Name="CartLineID" />
+    </Key>
+    <Property Name="CartLineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int64" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" />
+    <NavigationProperty Name="SOrder" Relationship="Self.FK_CartLine_Orders_OrderID" FromRole="SCartLine" ToRole="SOrders" />
+  </EntityType>
+  <EntityType Name="Shipper">
+    <Key>
+      <PropertyRef Name="ShipperID" />
+    </Key>
+    <Property Name="ShipperID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders2" Relationship="Self.FK_Orders_Shippers" FromRole="Shippers" ToRole="Orders2" />
+  </EntityType>
+  <EntityType Name="SOrder">
+    <Key>
+      <PropertyRef Name="SOrderID" />
+    </Key>
+    <Property Name="SOrderID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Line1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Line2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Line3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiftWrap" Type="Boolean" Nullable="false" />
+    <Property Name="Shipped" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="SCartLines" Relationship="Self.FK_CartLine_Orders_OrderID" FromRole="SOrders" ToRole="SCartLine" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Territory">
+    <Key>
+      <PropertyRef Name="TerritoryID" />
+    </Key>
+    <Property Name="TerritoryID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TerritoryDescription" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="RegionID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Region" Relationship="Self.FK_Territories_Region" FromRole="Territories" ToRole="Region" />
+    <NavigationProperty Name="Employees" Relationship="Self.EmployeeTerritories" FromRole="Territories" ToRole="Employees" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CITY_COUNTRY">
+    <End Role="COUNTRY" Type="Self.COUNTRY" Multiplicity="0..1" />
+    <End Role="CITY" Type="Self.CITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COUNTRY">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Principal>
+      <Dependent Role="CITY">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTOMER_CITY">
+    <End Role="CITY" Type="Self.CITY" Multiplicity="0..1" />
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITY">
+        <PropertyRef Name="CITY_ID" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="CITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTOMER_COUNTRY">
+    <End Role="COUNTRY" Type="Self.COUNTRY" Multiplicity="0..1" />
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COUNTRY">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOGIN_CUSTOMER">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+    <End Role="LOGIN" Type="Self.LOGIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Principal>
+      <Dependent Role="LOGIN">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Customers">
+    <End Role="Customers" Type="Self.Customer1" Multiplicity="0..1" />
+    <End Role="Orders2" Type="Self.Orders2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Orders2">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Employees1" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Employees1">
+        <PropertyRef Name="ReportsTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Orders2" Type="Self.Orders2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Orders2">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_Orders">
+    <End Role="Orders2" Type="Self.Orders2" Multiplicity="1" />
+    <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders2">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Shippers">
+    <End Role="Shippers" Type="Self.Shipper" Multiplicity="0..1" />
+    <End Role="Orders2" Type="Self.Orders2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shippers">
+        <PropertyRef Name="ShipperID" />
+      </Principal>
+      <Dependent Role="Orders2">
+        <PropertyRef Name="ShipVia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Territories_Region">
+    <End Role="Region" Type="Self.Region" Multiplicity="1" />
+    <End Role="Territories" Type="Self.Territory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="Territories">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CartLine_Orders_OrderID">
+    <End Role="SOrders" Type="Self.SOrder" Multiplicity="0..1" />
+    <End Role="SCartLine" Type="Self.SCartLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOrders">
+        <PropertyRef Name="SOrderID" />
+      </Principal>
+      <Dependent Role="SCartLine">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <Association Name="CustomerCustomerDemo">
+    <End Role="CustomerDemographics" Type="Self.CustomerDemographic" Multiplicity="*" />
+    <End Role="Customers" Type="Self.Customer1" Multiplicity="*" />
+  </Association>
+  <Association Name="EmployeeTerritories">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+    <End Role="Territories" Type="Self.Territory" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="NorthwindEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
+    <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaim" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="AspNetUsers2" EntityType="Self.AspNetUsers2" />
+    <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserToken" />
+    <EntitySet Name="CartLines" EntityType="Self.CartLine" />
+    <EntitySet Name="CITies" EntityType="Self.CITY" />
+    <EntitySet Name="COUNTRies" EntityType="Self.COUNTRY" />
+    <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+    <EntitySet Name="CustomerDemographics" EntityType="Self.CustomerDemographic" />
+    <EntitySet Name="Customers1" EntityType="Self.Customer1" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="LOGINs" EntityType="Self.LOGIN" />
+    <EntitySet Name="Order_Details" EntityType="Self.Order_Detail" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Orders2" EntityType="Self.Orders2" />
+    <EntitySet Name="Productsbkps" EntityType="Self.Productsbkp" />
+    <EntitySet Name="Regions" EntityType="Self.Region" />
+    <EntitySet Name="SCartLines" EntityType="Self.SCartLine" />
+    <EntitySet Name="Shippers" EntityType="Self.Shipper" />
+    <EntitySet Name="SOrders" EntityType="Self.SOrder" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Territories" EntityType="Self.Territory" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CITY_COUNTRY" Association="Self.FK_CITY_COUNTRY">
+      <End Role="COUNTRY" EntitySet="COUNTRies" />
+      <End Role="CITY" EntitySet="CITies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTOMER_CITY" Association="Self.FK_CUSTOMER_CITY">
+      <End Role="CITY" EntitySet="CITies" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTOMER_COUNTRY" Association="Self.FK_CUSTOMER_COUNTRY">
+      <End Role="COUNTRY" EntitySet="COUNTRies" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOGIN_CUSTOMER" Association="Self.FK_LOGIN_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="LOGIN" EntitySet="LOGINs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customers" Association="Self.FK_Orders_Customers">
+      <End Role="Customers" EntitySet="Customers1" />
+      <End Role="Orders2" EntitySet="Orders2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Employees" Association="Self.FK_Employees_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Employees1" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Orders2" EntitySet="Orders2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_Orders" Association="Self.FK_Order_Details_Orders">
+      <End Role="Orders2" EntitySet="Orders2" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Shippers" Association="Self.FK_Orders_Shippers">
+      <End Role="Shippers" EntitySet="Shippers" />
+      <End Role="Orders2" EntitySet="Orders2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Territories_Region" Association="Self.FK_Territories_Region">
+      <End Role="Region" EntitySet="Regions" />
+      <End Role="Territories" EntitySet="Territories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CartLine_Orders_OrderID" Association="Self.FK_CartLine_Orders_OrderID">
+      <End Role="SOrders" EntitySet="SOrders" />
+      <End Role="SCartLine" EntitySet="SCartLines" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerCustomerDemo" Association="Self.CustomerCustomerDemo">
+      <End Role="CustomerDemographics" EntitySet="CustomerDemographics" />
+      <End Role="Customers" EntitySet="Customers1" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeTerritories" Association="Self.EmployeeTerritories">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Territories" EntitySet="Territories" />
+    </AssociationSet>
+    <FunctionImport Name="REGISTRATION">
+      <Parameter Name="CUSTOMER_NAME" Mode="In" Type="String" />
+      <Parameter Name="EMAIL_ID" Mode="In" Type="String" />
+      <Parameter Name="COUNTRY_ID" Mode="In" Type="Int32" />
+      <Parameter Name="CITY_ID" Mode="In" Type="Int32" />
+      <Parameter Name="PIN_CODE" Mode="In" Type="Int32" />
+      <Parameter Name="KEYWORD" Mode="In" Type="String" />
+      <Parameter Name="ADDRESS" Mode="In" Type="String" />
+      <Parameter Name="EMAIL_ID_OUT" Mode="InOut" Type="String" />
+      <Parameter Name="PWD" Mode="In" Type="String" />
+      <Parameter Name="CUSTOMER_ID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

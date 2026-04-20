@@ -1,0 +1,65 @@
+﻿@model ProvidenceClinics.Models.m_types
+
+@{
+    ViewBag.Title = "Delete Medicine Type";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Delete Medicine Type</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/m_types/Index">Medicine Types</a></li>
+                        <li class="breadcrumb-item active">ADelete Medicine Type</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            
+                            <h3>Are you sure you want to delete this?</h3>
+                            <div>
+                                <h4>m_types</h4>
+                                <hr />
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        Medicine Type
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.type)
+                                    </dd>
+
+                                </dl>
+
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Delete" class="btn btn-success" /> |
+                                        @Html.ActionLink("Cancel", "Index")
+                                    </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 ProvidenceClinic.</p>
+    </footer>
+
+</div>

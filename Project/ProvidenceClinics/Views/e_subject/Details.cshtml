@@ -1,0 +1,49 @@
+﻿@model ProvidenceClinics.Models.e_subject
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Subject Details</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="students.html">Student</a></li>
+                        <li class="breadcrumb-item active">Subject Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            <h4>e_subject</h4>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.name)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.name)
+                                </dd>
+
+                            </dl>
+                        </div>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.subid }) |
+                            @Html.ActionLink("Cancel", "Index")
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

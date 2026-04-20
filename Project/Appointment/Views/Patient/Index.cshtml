@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Appointment.Models.AppointmentViewModel>
+
+@{
+    ViewBag.Title = "Patient Dashboard";
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="\Home\Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Appointment Dashboard</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">Dashboard</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                @Html.Partial("PatientSidebar")
+            </div>
+
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="content container-fluid">
+                    <div class="page-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="page-title">Doctor Appointments</h3>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Doctor")">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">Schedule Timings</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-auto text-right float-right ml-auto">
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card card-table">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                            @if (ViewBag.Appointments != null && ViewBag.Appointments.Count > 0)
+                                            {
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-striped table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th>Appointment ID</th>
+                                                                <th>Patient Name</th>
+                                                                <th>Doctor Name</th>
+                                                                <th>Appointment Date</th>
+                                                                <th>Appointment Time</th>
+                                                                <th>Status</th>
+                                                                <th>Fee</th>
+                                                                <th>Patient Email</th>
+                                                                <th>Doctor Email</th>
+                                                                <th>Specialist Name</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var appointment in ViewBag.Appointments as List<Appointment.Models.AppointmentViewModel>)
+                                                            {
+                                                                <tr>
+                                                                    <td>@appointment.AppointmentID</td>
+                                                                    <td>@appointment.PatientFirstName @appointment.PatientLastName</td>
+                                                                    <td>@appointment.DoctorFirstName @appointment.DoctorLastName</td>
+                                                                    <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                                                                    <td>@appointment.AppointmentTime.ToString(@"hh\:mm")</td>
+                                                                    <td>@appointment.StatusName</td>
+                                                                    <td>@appointment.Fee.ToString("C")</td>
+                                                                    <td>@appointment.PatientEmail</td>
+                                                                    <td>@appointment.DoctorEmail</td>
+                                                                    <td>@appointment.SpecialistName</td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <p>No appointments found.</p>
+                                            }
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->

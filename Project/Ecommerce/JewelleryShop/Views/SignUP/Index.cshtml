@@ -1,0 +1,170 @@
+﻿@model JewelleryShop.Models.Registration
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <!-- Breadcrumbs Area Start -->
+    <div class="breadcrumbs-area2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Registration</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumbs Area End -->
+    <!-- My Account Area Start -->
+    <div class="my-account-area section-padding">
+        <div class="container">
+            <div class="section-title2">
+                <h2>@ViewBag.Msg </h2>
+                <h2>Procced to Checkout</h2>
+                <p>Welcome to your account. Here you can manage all of your personal information</p>
+            </div>
+            <div class="row">
+                <div class="addresses-lists">
+                    <div class="col-md-12">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="fa fa-building"></i>
+                                            <span>Add Your Information Here</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <div class="coupon-info">
+
+
+                                            <p class="required">*Required field</p>
+                                            <form action="#">
+                                                <p class="form-row">
+
+                                                    @Html.LabelFor(model => model.CUSTOMER_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                                                    @Html.EditorFor(model => model.CUSTOMER_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.CUSTOMER_NAME, "", new { @class = "text-danger" })
+                                                </p>
+                                                <p class="form-row">
+                                                    @Html.LabelFor(model => model.EMAIL_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+
+
+                                                    @Html.EditorFor(model => model.EMAIL_ID, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.EMAIL_ID, "", new { @class = "text-danger" })
+                                                </p>
+                                                <p class="form-row">
+                                                    <select name="country" class="form-control">
+                                                        <option>Select Country</option>
+                                                        @foreach (var c in ViewBag.clist)
+                                                        {
+                                                            <option value="@c.COUNTRY_ID">@c.COUNTRY_NAME </option>
+                                                        }
+                                                    </select>
+                                                </p>
+
+                                                <p class="form-row">
+
+                                                    <select name="city" class="form-control">
+                                                        <option>Select City</option>
+                                                        @foreach (var c in ViewBag.slist)
+                                                        {
+                                                            <option value="@c.CITY_ID">@c.CITY_NAME </option>
+                                                        }
+                                                    </select>
+                                                </p>
+
+                                                <p class="form-row">
+
+                                                    @Html.LabelFor(model => model.ADDRESS, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                                                    @Html.EditorFor(model => model.ADDRESS, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.ADDRESS, "", new { @class = "text-danger" })
+                                                </p>
+
+                                                <p class="form-row">
+
+                                                    @Html.LabelFor(model => model.PIN_CODE, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                                                    @Html.EditorFor(model => model.PIN_CODE, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.PIN_CODE, "", new { @class = "text-danger" })
+                                                </p>
+
+                                                <p class="form-row">
+
+                                                    @Html.LabelFor(model => model.PASSWORD, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                                                    @Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.PASSWORD, "", new { @class = "text-danger" })
+                                                </p>
+
+                                                <p class="form-row">
+
+                                                    @Html.LabelFor(model => model.CPASSWORD, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                                                    @Html.EditorFor(model => model.CPASSWORD, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.CPASSWORD, "", new { @class = "text-danger" })
+
+                                                </p>
+
+                                                <p class="form-row">
+
+                                                    @Html.LabelFor(model => model.KEYWORD, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                                                    @Html.EditorFor(model => model.KEYWORD, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.KEYWORD, "", new { @class = "text-danger" })
+
+                                                </p>
+
+                                                <p class="form-row">
+                                                  <img src="/SignUp/ShowCaptcha"/>
+                                                   
+                                                </p>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <input type="submit" value="Submit" class="btn btn-default" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="create-account-button pull-left">
+                        <a href="/Home/Index" class="btn btn-default button button-small" title="Home">
+                            <span>
+                                <i class="fa fa-chevron-left"></i>
+                                Home
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- My Account Area End -->
+}
+

@@ -1,0 +1,238 @@
+﻿@model IEnumerable<Appointment.Models.s_Doctor>
+@{
+    ViewBag.Title = "Index";
+    // Debugging: Log or output the current user type
+    var userType = Session["UserType"] as string;
+    System.Diagnostics.Debug.WriteLine($"Current UserType: {userType}");
+
+    // Determine the layout based on the user type
+    if (userType == "Doctor")
+    {
+        Layout = "~/Views/Shared/_Layout_doctor.cshtml";
+    }
+    else if (userType == "Patient")
+    {
+        Layout = "~/Views/Shared/_Layout_patient.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<!-- Home Banner -->
+<section class="section section-search">
+    <div class="container-fluid">
+        <div class="banner-wrapper">
+            <div class="banner-header text-center">
+                <h1>Search Doctor, Make an Appointment</h1>
+                <p>Discover the best doctors, clinic & hospital.</p>
+            </div>
+
+            <div class="search-box">
+                <form action="/Home/Search" method="get">
+                    <div class="form-group search-Specialist">
+                        <input name="SpecialistID" type="search" class="form-control" placeholder="Search Specialist">
+                        <span class="form-text">Based on your Specialist</span>
+                    </div>
+                    <div class="form-group search-info">
+                        <input name="DoctorName" type="search" class="form-control" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
+                        <span class="form-text">Ex: Dental or Sugar Check up etc</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary search-btn"><i class="fas fa-search"></i> <span>Search</span></button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- /Home Banner -->
+<!-- Clinic and Specialities -->
+<section class="section section-specialities">
+    <div class="container-fluid">
+        <div class="section-header text-center">
+            <h2>Clinic and Specialities</h2>
+            <p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <!-- Slider -->
+                <div class="specialities-slider slider">
+
+                    <!-- Slider Item -->
+                    <div class="speicality-item text-center">
+                        <div class="speicality-img">
+                            <img src="~\assets/img/specialities/specialities-01.png" class="img-fluid" alt="Speciality">
+                            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                        </div>
+                        <p>Urology</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="speicality-item text-center">
+                        <div class="speicality-img">
+                            <img src="~\assets/img/specialities/specialities-02.png" class="img-fluid" alt="Speciality">
+                            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                        </div>
+                        <p>Neurology</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="speicality-item text-center">
+                        <div class="speicality-img">
+                            <img src="~\assets/img/specialities/specialities-03.png" class="img-fluid" alt="Speciality">
+                            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                        </div>
+                        <p>Orthopedic</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="speicality-item text-center">
+                        <div class="speicality-img">
+                            <img src="~\assets/img/specialities/specialities-04.png" class="img-fluid" alt="Speciality">
+                            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                        </div>
+                        <p>Cardiologist</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="speicality-item text-center">
+                        <div class="speicality-img">
+                            <img src="~\assets/img/specialities/specialities-05.png" class="img-fluid" alt="Speciality">
+                            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                        </div>
+                        <p>Dentist</p>
+                    </div>
+                    <!-- /Slider Item -->
+
+                </div>
+                <!-- /Slider -->
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Clinic and Specialities -->
+<!-- Popular Section -->
+<section class="section section-doctor">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-header ">
+                    <h2>Book Our Doctor</h2>
+                    <p>We have Professional Doctor all over Cities</p>
+                </div>
+                <div class="about-content">
+                    <p>At the core of our mission is the commitment to enhancing the healthcare experience for all stakeholders. We believe that efficient appointment management is crucial for the well-being of patients and the smooth operation of healthcare facilities. Our system strives to simplify the process, providing a seamless and user-friendly platform for patients to connect with their healthcare providers..</p>
+                    <p>The system also serves as a platform for disseminating information on diseases, preventions, cures, medical news, and innovations in medical science.</p>
+                    <a href="javascript:;">Read More..</a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="doctor-slider slider">
+                    use for each and get up 10 record Form model only
+
+
+
+                    @foreach (var item in Model)
+                    {
+                        <!-- Doctor Widget -->
+                        <div class="profile-widget">
+                            <div class="doc-img">
+                                <a href="@Url.Action("Detail", "Home", new { id = item.DoctorID })">
+                                    <img class="img-fluid" alt="Doctor Image" src="~/@(!string.IsNullOrEmpty(item.image) ? Url.Content(item.image) : Url.Content("~/images/default-doctor.png"))">
+                                </a>
+                                <a href="javascript:void(0)" class="fav-btn">
+                                    <i class="far fa-bookmark"></i>
+                                </a>
+                            </div>
+                            <div class="pro-content">
+                                <h3 class="title">
+                                    <a href="@Url.Action("Detail", "Home", new { id = item.DoctorID })">
+                                        @item.FirstName @item.LastName
+                                    </a>
+                                    <i class="fas fa-check-circle verified"></i>
+                                </h3>
+                                <p class="speciality">@item.s_Specialist.SpecialistName</p>
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <span class="d-inline-block average-rating">(17)</span>
+                                </div>
+                                <div class="row row-sm">
+                                    <div class="col-6">
+                                        <a href="@Url.Action("Detail", "Home", new { id = item.DoctorID })" class="btn view-btn">View Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Doctor Widget -->
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Popular Section -->
+<!-- Availabe Features -->
+<section class="section section-features">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 features-img">
+                <img src="~\assets/img/features/feature.png" class="img-fluid" alt="Feature">
+            </div>
+            <div class="col-md-7">
+                <div class="section-header">
+                    <h2 class="mt-2">Availabe Features in Our Clinic</h2>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                </div>
+                <div class="features-slider slider">
+                    <!-- Slider Item -->
+                    <div class="feature-item text-center">
+                        <img src="~\assets/img/features/feature-01.jpg" class="img-fluid" alt="Feature">
+                        <p>Patient Ward</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="feature-item text-center">
+                        <img src="~\assets/img/features/feature-02.jpg" class="img-fluid" alt="Feature">
+                        <p>Test Room</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="feature-item text-center">
+                        <img src="~\assets/img/features/feature-03.jpg" class="img-fluid" alt="Feature">
+                        <p>ICU</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="feature-item text-center">
+                        <img src="~\assets/img/features/feature-04.jpg" class="img-fluid" alt="Feature">
+                        <p>Laboratory</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="feature-item text-center">
+                        <img src="~\assets/img/features/feature-05.jpg" class="img-fluid" alt="Feature">
+                        <p>Operation</p>
+                    </div>
+                    <!-- /Slider Item -->
+                    <!-- Slider Item -->
+                    <div class="feature-item text-center">
+                        <img src="~\assets/img/features/feature-06.jpg" class="img-fluid" alt="Feature">
+                        <p>Medical</p>
+                    </div>
+                    <!-- /Slider Item -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Availabe Features -->

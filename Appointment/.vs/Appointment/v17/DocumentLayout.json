@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\views\\shared\\patientsidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:views\\shared\\patientsidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\views\\patient\\labtest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:views\\patient\\labtest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\views\\shared\\_layout_patient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:views\\shared\\_layout_patient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\models\\v_appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:models\\v_appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\views\\patient\\prescriptions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:views\\patient\\prescriptions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\models\\prescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:models\\prescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\models\\labtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:models\\labtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\models\\e_staff_type.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:models\\e_staff_type.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|c:\\users\\zeeshan\\desktop\\appointment\\views\\shared\\_doctorsidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924EC4EE-AC6C-497F-BC98-B8A7864D9329}|Appointment.csproj|solutionrelative:views\\shared\\_doctorsidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "e_staff_type.cs",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Models\\e_staff_type.cs",
+              "RelativeDocumentMoniker": "Models\\e_staff_type.cs",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Models\\e_staff_type.cs",
+              "RelativeToolTip": "Models\\e_staff_type.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T09:41:53.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "labtest.cs",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Models\\labtest.cs",
+              "RelativeDocumentMoniker": "Models\\labtest.cs",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Models\\labtest.cs",
+              "RelativeToolTip": "Models\\labtest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T09:40:59.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Prescription.cs",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Models\\Prescription.cs",
+              "RelativeDocumentMoniker": "Models\\Prescription.cs",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Models\\Prescription.cs",
+              "RelativeToolTip": "Models\\Prescription.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T09:40:44.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "v_Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Models\\v_Appointment.cs",
+              "RelativeDocumentMoniker": "Models\\v_Appointment.cs",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Models\\v_Appointment.cs",
+              "RelativeToolTip": "Models\\v_Appointment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T09:40:32.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PatientController.cs",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "Controllers\\PatientController.cs",
+              "ViewState": "AQIAANsAAAAAAAAAAAAmwO4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T09:21:35.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout_patient.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Shared\\_Layout_patient.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout_patient.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Shared\\_Layout_patient.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout_patient.cshtml",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAAFsAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-10T09:20:28.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_DoctorSidebar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Shared\\_DoctorSidebar.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_DoctorSidebar.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Shared\\_DoctorSidebar.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_DoctorSidebar.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-10T09:20:14.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PatientSidebar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Shared\\PatientSidebar.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\PatientSidebar.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Shared\\PatientSidebar.cshtml",
+              "RelativeToolTip": "Views\\Shared\\PatientSidebar.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACkAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-10T09:19:54.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LabTest.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Patient\\LabTest.cshtml",
+              "RelativeDocumentMoniker": "Views\\Patient\\LabTest.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Patient\\LabTest.cshtml",
+              "RelativeToolTip": "Views\\Patient\\LabTest.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-10T09:19:20.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Prescriptions.cshtml",
+              "DocumentMoniker": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Patient\\Prescriptions.cshtml",
+              "RelativeDocumentMoniker": "Views\\Patient\\Prescriptions.cshtml",
+              "ToolTip": "C:\\Users\\Zeeshan\\Desktop\\Appointment\\Views\\Patient\\Prescriptions.cshtml",
+              "RelativeToolTip": "Views\\Patient\\Prescriptions.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-10T09:19:14.802Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
